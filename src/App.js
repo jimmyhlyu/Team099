@@ -5,6 +5,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import AddFriend from "./AddFriend";
+
 function App() {
   return (
     <>
@@ -18,7 +22,7 @@ function App() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="add-friend">Add Friend</Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -43,6 +47,13 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<></>} />
+          <Route path="/add-friend" element={<AddFriend />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
