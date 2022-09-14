@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -9,7 +10,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function App() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar style={{ backgroundColor: "#A9F1EE" }} expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -19,6 +20,7 @@ function App() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
+            <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -30,6 +32,9 @@ function App() {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="#" disabled>
+              Link
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
