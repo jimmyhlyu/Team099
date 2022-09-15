@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFriend from "./AddFriend";
 import Friends from "./Friends";
+import Login from "./Login";
 
 function App() {
   return (
@@ -27,9 +28,7 @@ function App() {
               <Nav.Link href="add-friend">Add Friend</Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
+                <NavDropdown.Item href="login">Login</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
                   Something else here
@@ -54,6 +53,7 @@ function App() {
           <Route path="" element={<></>} />
           <Route path="/friends" element={<Friends />} />
           <Route path="/add-friend" element={<AddFriend />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
