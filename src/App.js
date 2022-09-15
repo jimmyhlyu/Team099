@@ -8,13 +8,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFriend from "./AddFriend";
+import Friends from "./Friends";
 
 function App() {
   return (
     <>
       <Navbar style={{ backgroundColor: "#A9F1EE" }} expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="/">Home</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -22,7 +23,7 @@ function App() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="friends">Friends</Nav.Link>
               <Nav.Link href="add-friend">Add Friend</Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -51,6 +52,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<></>} />
+          <Route path="/friends" element={<Friends />} />
           <Route path="/add-friend" element={<AddFriend />} />
         </Routes>
       </BrowserRouter>

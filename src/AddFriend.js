@@ -12,7 +12,7 @@ function AddFriend() {
         <Row>
           <Col></Col>
           <Col sm={12} md={8} lg={6}>
-            <h1>NEW FRIEND</h1>
+            <h1 className="text-center">NEW FRIEND</h1>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control type="email" placeholder="Name" />
@@ -27,13 +27,13 @@ function AddFriend() {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Control type="password" placeholder="Contact Info" />
               </Form.Group>
-              <Row>
-                <Col>
+              <Row style={{ justifyContent: "space-between" }}>
+                <Col sm md lg={1}>
                   <Button variant="danger" type="submit">
                     Clear
                   </Button>
                 </Col>
-                <Col className="align-items-end">
+                <Col sm md lg={1}>
                   <Button variant="success" type="submit">
                     Submit
                   </Button>
