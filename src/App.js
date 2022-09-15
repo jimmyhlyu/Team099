@@ -11,16 +11,11 @@ import AddFriend from "./AddFriend";
 import Friends from "./Friends";
 import Login from "./Login";
 
-import menuIcon from "./menu_black_24dp.svg";
-
 function App() {
   return (
     <>
       <Navbar style={{ backgroundColor: "#A9F1EE" }} expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#menu">
-            <img src={menuIcon}></img>
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
