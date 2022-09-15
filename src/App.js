@@ -16,7 +16,6 @@ function App() {
     <>
       <Navbar style={{ backgroundColor: "#A9F1EE" }} expand="lg">
         <Container fluid>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -26,25 +25,18 @@ function App() {
             >
               <Nav.Link href="friends">Friends</Nav.Link>
               <Nav.Link href="add-friend">Add Friend</Nav.Link>
-              <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="login">Login</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="login">Login</Nav.Link>
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search friends..."
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
         </Container>
       </Navbar>
 

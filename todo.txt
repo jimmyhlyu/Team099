@@ -1,6 +1,6 @@
 dark mode
-narrow
-log in
+layout centering
 navbar arrangement
 hamburger menu
 include rollins animations
+hamburger to activate menu page top left?
