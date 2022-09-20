@@ -1,6 +1,0 @@
-dark mode
-layout centering
-navbar arrangement
-hamburger menu
-include rollins animations
-hamburger to activate menu page top left?

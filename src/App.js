@@ -11,6 +11,8 @@ import AddFriend from "./AddFriend";
 import Friends from "./Friends";
 import Login from "./Login";
 
+import "./App.css";
+
 function App() {
   return (
     <>
