@@ -10,7 +10,7 @@ export function createAccWithEmail(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log("createAcc Email successes");
+      console.log("createAcc Email successful");
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -25,7 +25,7 @@ export function signInWithEmail(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log("user = " + user.email);
-      window.alert("signIn email successes");
+      window.alert("signIn email successful");
       // ...
     })
     .catch((error) => {
