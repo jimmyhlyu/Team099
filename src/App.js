@@ -10,11 +10,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddFriend from "./AddFriend";
 import Friends from "./Friends";
 import Login from "./Login";
+import FirestoreTest from "./Firestore";
 
 import "./App.css";
 import Logo from "./4.jpg";
 
 function App() {
+  FirestoreTest();
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
