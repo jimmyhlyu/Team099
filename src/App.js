@@ -12,11 +12,21 @@ import Friends from "./Friends";
 import Login from "./Login";
 
 import "./App.css";
+import Logo from "./4.jpg";
 
 function App() {
   return (
     <>
-      <Navbar style={{ backgroundColor: "#A9F1EE" }} expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand href="#home">
+          <img
+            src={Logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="React Bootstrap logo"
+          />
+        </Navbar.Brand>
         <Container fluid>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
