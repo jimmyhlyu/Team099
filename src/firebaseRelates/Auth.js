@@ -15,7 +15,7 @@ export function createAccWithEmail(email, password) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log("createAcc Email fails, Error message" + errorMessage);
+      console.log("createAcc Email fails, Error message: " + errorMessage);
     });
 }
 
@@ -25,15 +25,12 @@ export function signInWithEmail(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log("user = " + user.email);
-      console.log("signIn email successes");
+      window.alert("signIn email successes");
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log("signIn email fails Error message" + errorMessage);
+      window.alert("signIn email fails Error message: " + errorMessage);
     });
 }
-
-
-

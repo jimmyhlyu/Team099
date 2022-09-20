@@ -11,7 +11,6 @@ import AddFriend from "./AddFriend";
 import Friends from "./Friends";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
-import * as Auth from "./firebaseRelates/Auth";
 
 import "./App.css";
 import Logo from "./4.jpg";
