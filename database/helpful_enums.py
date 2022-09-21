@@ -1,3 +1,7 @@
+# This file is written by Zhehong Zhang.
+# Usage of the whole or part of this file without expressed permission from the original author is strictly prohibited.
+
+
 from enum import Enum, auto
 
 

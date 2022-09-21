@@ -1,3 +1,6 @@
+# This file is written by Zhehong Zhang.
+# Usage of the whole or part of this file without expressed permission from the original author is strictly prohibited.
+
 # new/good opportunity that's been neglected for too long
 # alarm for having too many opportunities or core opportunities
 
@@ -13,15 +16,17 @@
 
 # auto suggest cutting loses
 
+from database.data_classes import User
+
 
 def neglected():
     # opportunity is worth-while but has been neglected for too long
     pass
 
 
-def overload():
-    # too many leads/opportunities/active close friends
-    pass
+def overcapacity(user: User) -> bool:
+    """Returns if a user has too many leads/opportunities"""
+    return len(user.connection_ids) > 5
 
 
 def total_thread_value():

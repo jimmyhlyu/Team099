@@ -1,3 +1,7 @@
+# This file is written by Zhehong Zhang.
+# Usage of the whole or part of this file without expressed permission from the original author is strictly prohibited.
+
+
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from .helpful_enums import AccountStatus, ConnectionStatus
@@ -68,14 +72,14 @@ class Connection:
     """Class for keeping track of connections."""
 
     id_: str = field(default_factory=lambda: str(uuid4()))
-    status: str = 'LEAD'
     name: str = None
+    status: str = 'LEAD'
     user_id: str = None
     sex: str = None
     age: int = 0
 
     priority: int = 0  # ranking of expected_value in the network
-    expected_value: float = 0  # probability_of_success * value_to_user
+    expected_value: float = 0  # probability_of_success * value
     probability_of_success: float = 0.5  # statistical value (internal and external factors)
     value: float = 0  # user-centric value = metric_weights * metric_scores
 
@@ -105,8 +109,8 @@ class Connection:
     def to_dict(self):
         return {
             'id': self.id_,
-            'status': self.status,
             'name': self.name,
+            'status': self.status,
             'user_id': self.user_id,
             'sex': self.sex,
             'age': self.age,
