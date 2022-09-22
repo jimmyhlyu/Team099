@@ -8,7 +8,7 @@ from typing import List, Dict
 
 import numpy as np
 
-from .helpful_enums import AccountStatus, ConnectionStatus, Sector
+from .helpful_enums import AccountStatus, ConnectionStatus, Sector, Gender
 from uuid import uuid4, UUID
 
 
@@ -84,7 +84,7 @@ class Connection:
     name: str = None
     status: str = 'LEAD'
     user_id: str = None
-    sex: str = None
+    gender: str = None
     age: int = 0
     sector: str = 'friendship'
 
@@ -104,7 +104,7 @@ class Connection:
     #     'external_difficulty': 0,
     #     'nexus': 0,
     # })
-    metrics: Dict[float] = field(default_factory=lambda: {
+    metrics: dict = field(default_factory=lambda: {
         'charm': .0,
         'closeness': .0,
         'companionship': .0,
@@ -119,6 +119,8 @@ class Connection:
             raise ValueError('invalid connection type')
         if self.sector not in [s.name for s in Sector]:
             raise ValueError('invalid sector')
+        if self.gender not in [s.name for s in Gender]:
+            raise ValueError('invalid gender')
 
     @staticmethod
     def from_dict(source: dict):
@@ -130,7 +132,7 @@ class Connection:
             'name': self.name,
             'status': self.status,
             'user_id': self.user_id,
-            'sex': self.sex,
+            'gender': self.gender,
             'age': self.age,
             'sector': self.sector,
             'efficiency': self.efficiency,

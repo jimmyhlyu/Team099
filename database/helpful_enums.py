@@ -24,3 +24,8 @@ class Sector(Enum):
     FRIENDSHIP = auto()
     RELATIONSHIP = auto()
     CAREER = auto()
+
+
+class Gender(Enum):
+    MALE = auto()
+    FEMALE = auto()
