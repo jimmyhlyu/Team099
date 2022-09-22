@@ -17,17 +17,17 @@ from markupsafe import escape
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello() -> str:
     return "Hello, World!"
 
 
-@app.route('/user/get/<string:user_id>')
+@app.route('/user/get/<string:user_id>', methods=['GET'])
 def get_user(user_id: str) -> str:
     return dumps(db.collection('users').document(user_id).get())
 
 
-@app.route('/user/add/<string:user_dict>')
+@app.route('/user/add/<string:user_dict>', methods=['POST'])
 def add_user(user_dict: dict | str):
     if isinstance(user_dict, str):
         user_dict = loads(user_dict)
@@ -36,7 +36,7 @@ def add_user(user_dict: dict | str):
     db.collection('users').document(user.id).set(user.to_dict())
 
 
-@app.route('/user/delete/<string:user_id>')
+@app.route('/user/delete/<string:user_id>', methods=['DELETE'])
 def delete_user(user_id: str):
     # delete user's connections
     docs = db.collection('connectionHistory').where('connection.user_id', '==', user_id).stream()
@@ -48,7 +48,7 @@ def delete_user(user_id: str):
     db.collection('users').document(user_id).delete()
 
 
-@app.route('/user/update/<string:user_id>/<string:params_dict>')
+@app.route('/user/update/<string:user_id>/<string:params_dict>', methods=['PATCH'])
 def update_user(user_id: str, params_dict: dict | str):
     if isinstance(params_dict, str):
         params_dict = loads(params_dict)
@@ -63,7 +63,7 @@ def get_latest_weights(user_id: str):
     return sector_weights, metric_weights
 
 
-@app.route('/connection/get/<string:connection_id>')
+@app.route('/connection/get/<string:connection_id>', methods=['GET'])
 def get_connection(connection_id: str) -> str:
     return dumps(_get_connection(connection_id).to_dict())
 
@@ -73,14 +73,14 @@ def _get_connection(connection_id: str) -> DocumentSnapshot:
     return max(docs, key=lambda x: x.to_dict()['timestamp'])
 
 
-@app.route('/connection/get/from_user/<string:user_id>')
+@app.route('/connection/get/from_user/<string:user_id>', methods=['GET'])
 def get_connections_from(user_id: str) -> str:
     docs = db.collection('connectionHistory').where('connection.user_id', '==', user_id).stream()
     connections = {doc.id: doc.to_dict() for doc in docs}
     return dumps(connections)
 
 
-@app.route('/connection/add/<string:user_id>/<string:connection_dict>')
+@app.route('/connection/add/<string:user_id>/<string:connection_dict>', methods=['POST'])
 def add_connection(user_id: str, connection_dict: dict | str):
     if isinstance(connection_dict, str):
         connection_dict = loads(connection_dict)
@@ -101,7 +101,7 @@ def add_connection(user_id: str, connection_dict: dict | str):
     })
 
 
-@app.route('/connection/delete/<string:user_id>/<string:connection_id>')
+@app.route('/connection/delete/<string:user_id>/<string:connection_id>', methods=['DELETE'])
 def delete_connection(user_id: str, connection_id: str):
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
@@ -116,7 +116,8 @@ def delete_connection(user_id: str, connection_id: str):
 
 
 # pending deprecation
-@app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>/<int:inplace>')
+@app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>/<int:inplace>',
+           methods=['PATCH'])
 def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=False):
     if isinstance(answers, str):
         answers = loads(answers)
@@ -130,7 +131,7 @@ def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=Fal
     }, inplace=inplace)
 
 
-@app.route('/connection/update/<string:connection_id>/<string:params>/<int:inplace>')
+@app.route('/connection/update/<string:connection_id>/<string:params>/<int:inplace>', methods=['PATCH'])
 def update_connection(connection_id: str, params: dict | str, inplace=False):
     if isinstance(params, str):
         loads(params)
@@ -156,7 +157,7 @@ def update_connection(connection_id: str, params: dict | str, inplace=False):
     })
 
 
-@app.route('/connection/insights/<string:user_id>/<string:connection_id>')
+@app.route('/connection/insights/<string:user_id>/<string:connection_id>', methods=['GET'])
 def get_insights_timeline(user_id: str, connection_id: str):
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
 
