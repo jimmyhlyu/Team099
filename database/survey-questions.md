@@ -13,9 +13,9 @@
   - how_much_they_like_us
   - toxicity
   - responsiveness
-  - external_difficulty
+  - ~~external_difficulty~~
   - nexus
-  - popularity
+  - ~~popularity~~
 
 Below is some ideas on possible questions to ask
 
@@ -70,11 +70,11 @@ It seems that I never had to try too hard to make them feel happy
 
 they respond to text quickly and enthusiastically
 
-### external_difficulty
+### ~~external_difficulty~~
 
 ~~It takes a lot of effort or sacrifice to spend time with this person~~
 
-It takes too much effort to meet with this person due to either distance, conflicting schedules, etc
+~~It takes too much effort to meet with this person due to either distance, conflicting schedules, etc~~
 
 ### nexus
 
@@ -82,7 +82,7 @@ It takes too much effort to meet with this person due to either distance, confli
 
 They are at the centre of our friendship circle
 
-### popularity
+### ~~popularity~~
 
 I feel like this person has a lot more friends than me
 

@@ -18,3 +18,9 @@ class ConnectionStatus(Enum):
     OPPORTUNITY = auto()
     CLOSED_WIN = auto()
     CLOSED_LOST = auto()
+
+
+class Sector(Enum):
+    FRIENDSHIP = auto()
+    RELATIONSHIP = auto()
+    CAREER = auto()
