@@ -24,7 +24,7 @@ def hello() -> str:
 
 @app.route('/user/get/<string:user_id>', methods=['GET'])
 def get_user(user_id: str) -> str:
-    return dumps(db.collection('users').document(user_id).get())
+    return dumps(db.collection('users').document(user_id).get().to_dict())
 
 
 @app.route('/user/add/<string:user_dict>', methods=['POST'])
@@ -157,7 +157,7 @@ def update_connection(connection_id: str, params: dict | str, inplace=False):
     })
 
 
-@app.route('/connection/insights/<string:user_id>/<string:connection_id>', methods=['GET'])
+@app.route('/connection/insights/timeline/<string:user_id>/<string:connection_id>', methods=['GET'])
 def get_insights_timeline(user_id: str, connection_id: str):
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
 

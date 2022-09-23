@@ -21,7 +21,7 @@ Below is some ideas on possible questions to ask
 
 ### Charm (how much we like them)
 
-They 
+They are extremely charming
 
 ### Closeness
 
