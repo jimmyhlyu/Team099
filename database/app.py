@@ -157,11 +157,22 @@ def update_connection(connection_id: str, params: dict | str, inplace=False):
     })
 
 
+@app.route('/connection/insights/any/<string:user_id>/<string:connection_history_id>', methods=['GET'])
+def get_insight(user_id: str, connection_id: str, connection_history_id: str):
+    insights = _get_insights_timeline(user_id, connection_id)
+    return insights[insights['history_id'] == connection_history_id].to_json()
+
+
 @app.route('/connection/insights/timeline/<string:user_id>/<string:connection_id>', methods=['GET'])
 def get_insights_timeline(user_id: str, connection_id: str):
+    return _get_insights_timeline(user_id, connection_id).to_json()
+
+
+def _get_insights_timeline(user_id: str, connection_id: str) -> pd.DataFrame:
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
 
     connections = pd.DataFrame([doc['connection'] for doc in docs])
+    connections['history_id'] = [doc.id for doc in docs]
     connections['timestamp'] = [doc['timestamp'] for doc in docs]
     connections = connections.set_index('timestamp').sort_index()
 
@@ -178,6 +189,4 @@ def get_insights_timeline(user_id: str, connection_id: str):
         metrics[['how_much_they_like_us', 'companionship', 'closeness']].rolling(3).mean().mean()
     connections['intensity'] = 1 - 1 / metrics.rolling('30d', min_periods=1).count()
 
-    insights = connections[['id', 'value', 'efficiency', 'intensity']].reset_index(drop=False)
-
-    return insights.to_json()
+    return connections[['history_id', 'value', 'efficiency', 'intensity']].reset_index(drop=False)
