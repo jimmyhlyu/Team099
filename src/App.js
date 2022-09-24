@@ -19,40 +19,13 @@ function App() {
   FirestoreTest();
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">
-          <img
-            src={Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
-        </Navbar.Brand>
-        <Container fluid>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="add-friend">Add Friend</Nav.Link>
-              <Nav.Link href="login">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search friends..."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Container>
-      </Navbar>
+      <div class="sideBar">
+        <div class="home sideBarButton"></div>
+        <div class="add sideBarButton"></div>
+        <div class="person sideBarButton"></div>
+        <div class="light sideBarButton"></div>
+        <div class="exit sideBarButton"></div>
+      </div>
 
       <BrowserRouter>
         <Routes>

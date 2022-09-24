@@ -5,13 +5,6 @@ function Dashboard() {
   return (
     <>
       <p className="title">Dashboard</p>
-      <div className="sideBar">
-        <div className="home sideBarButton"></div>
-        <div className="add sideBarButton"></div>
-        <div className="person sideBarButton"></div>
-        <div className="light sideBarButton"></div>
-        <div className="exit sideBarButton"></div>
-      </div>
 
       <div className="container">
         <form action="" className="parent">
