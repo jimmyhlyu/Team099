@@ -2,3 +2,35 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+.sideBar {
+  background-color: #1b2a40;
+  width: 8%;
+  height: 100vh;
+  width: 7vw;
+  float: left;
+}
+
+.sideBarButton {
+  width: 60px;
+  height: 50px;
+  margin: 20px 20px;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+.home {
+  background-image: url("home.png");
+}
+.add {
+  background-image: url("plus.png");
+}
+.person {
+  background-image: url("person.png");
+}
+.light {
+  background-image: url("light.png");
+}
+.exit {
+  background-image: url("exit.png");
+}
+

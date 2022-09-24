@@ -8,62 +8,36 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFriend from "./AddFriend";
-import Friends from "./Friends";
+import Dashboard from "./Dashboard";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
 
 import "./App.css";
-import Logo from "./4.jpg";
+import Logo from "./logo_bg.png";
 
 function App() {
   FirestoreTest();
   return (
-    <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">
-          <img
-            src={Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
-        </Navbar.Brand>
-        <Container fluid>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="friends">Friends</Nav.Link>
-              <Nav.Link href="add-friend">Add Friend</Nav.Link>
-              <Nav.Link href="login">Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search friends..."
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Container>
-      </Navbar>
+    <body>
+      <div class="sideBar">
+        <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
+        <Nav.Link className="add sideBarButton"></Nav.Link>
+        <Nav.Link className="person sideBarButton"></Nav.Link>
+        <Nav.Link className="light sideBarButton"></Nav.Link>
+        <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
+      </div>
 
       <BrowserRouter>
         <Routes>
           <Route path="" element={<></>} />
-          <Route path="/friends" element={<Friends />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </body>
   );
 }
 
 export default App;
+

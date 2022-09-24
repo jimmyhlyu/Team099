@@ -1,5 +1,5 @@
 import {
-  getAuth,
+  firebase, getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
