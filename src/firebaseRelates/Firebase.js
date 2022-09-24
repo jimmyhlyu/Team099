@@ -19,7 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-console.log("firebase connected successfully");
+console.log("firebase connecting, Result: success");
 
 
 export default app;

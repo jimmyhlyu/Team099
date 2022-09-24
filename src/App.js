@@ -11,12 +11,13 @@ import AddFriend from "./AddFriend";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
-
+import {TestConnection} from "./firebaseRelates/Database";
 import "./App.css";
 import Logo from "./logo_bg.png";
 
 function App() {
   FirestoreTest();
+  TestConnection();
   return (
     <body>
       <div class="sideBar">
