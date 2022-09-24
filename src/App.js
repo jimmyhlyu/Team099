@@ -20,11 +20,11 @@ function App() {
   return (
     <>
       <div class="sideBar">
-        <div class="home sideBarButton"></div>
-        <div class="add sideBarButton"></div>
-        <div class="person sideBarButton"></div>
-        <div class="light sideBarButton"></div>
-        <div class="exit sideBarButton"></div>
+        <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
+        <Nav.Link className="add sideBarButton"></Nav.Link>
+        <Nav.Link className="person sideBarButton"></Nav.Link>
+        <Nav.Link className="light sideBarButton"></Nav.Link>
+        <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
       </div>
 
       <BrowserRouter>
