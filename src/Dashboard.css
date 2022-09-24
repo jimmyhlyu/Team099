@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url("bgc.png");
+  background-size: 100% 100%;
+}
+
+.sideBar {
+  background-color: #1b2a40;
+  width: 8%;
+  height: 690px;
+  float: left;
+}
+.title {
+  font-size: 50px;
+  color: #ff6868;
+  margin-left: 6%;
+  margin-top: 1%;
+  display: inline-block;
+}
+
+.sideBarButton {
+  width: 60px;
+  height: 50px;
+  margin: 20px 20px;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+.home {
+  background-image: url("home.png");
+}
+.add {
+  background-image: url("plus.png");
+}
+.person {
+  background-image: url("person.png");
+}
+.light {
+  background-image: url("light.png");
+}
+.exit {
+  background-image: url("exit.png");
+}
+
+.friend {
+  width: 85%;
+  height: 150px;
+  background-color: #596672;
+  margin: 40px 12%;
+  border-radius: 10px;
+}
+.profilePic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: white;
+  margin: 22px 2%;
+  float: left;
+}
+.intimacy {
+  padding-top: 6%;
+  width: 250px;
+  height: 15px;
+  accent-color: #2ecc71;
+}
+.name {
+  font-size: 30px;
+  padding-top: 2%;
+}
+
+.container {
+  height: 70px;
+  width: 800px;
+  margin: 100px auto 0 auto;
+}
+.parent {
+  position: relative;
+}
+.container {
+  height: 70px;
+  width: 800px;
+  margin: 100px auto 0 auto;
+}
+
+.parent {
+  margin-top: -20%;
+  margin-left: 77%;
+  position: relative;
+}
+.search {
+  background-color: #f3f3f3;
+  width: 300px;
+  height: 40px;
+  border-radius: 18px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 20px;
+  position: absolute;
+}
+.btn {
+  height: 35px;
+  width: 40px;
+  position: absolute;
+  background: url("search.png");
+  top: 6px;
+  left: 270px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+

@@ -8,7 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFriend from "./AddFriend";
-import Friends from "./Friends";
+import Dashboard from "./Dashboard";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
 
@@ -37,7 +37,7 @@ function App() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="friends">Friends</Nav.Link>
+              <Nav.Link href="dashboard">Dashboard</Nav.Link>
               <Nav.Link href="add-friend">Add Friend</Nav.Link>
               <Nav.Link href="login">Login</Nav.Link>
             </Nav>
@@ -57,7 +57,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<></>} />
-          <Route path="/friends" element={<Friends />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
         </Routes>
@@ -67,3 +67,4 @@ function App() {
 }
 
 export default App;
+
