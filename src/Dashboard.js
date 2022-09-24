@@ -1,4 +1,6 @@
 import "./Dashboard.css";
+import Profile1 from "./proPic1.png";
+import Profile2 from "./proPic2.webp";
 function Dashboard() {
   return (
     <>
@@ -23,21 +25,21 @@ function Dashboard() {
       </div>
 
       <div className="friend">
-        <img className="profilePic" src="src/proPic2.webp" alt=""></img>
+        <img className="profilePic" src={Profile1} alt=""></img>
         <p className="name">Name</p>
         <progress className="intimacy" max="100" value="70">
           70%
         </progress>
       </div>
       <div className="friend">
-        <img className="profilePic" src="src/proPic2.webp" alt=""></img>
+        <img className="profilePic" src={Profile2} alt=""></img>
         <p className="name">Name</p>
         <progress className="intimacy" max="100" value="70">
           70%
         </progress>
       </div>
       <div className="friend">
-        <img className="profilePic" src="src/proPic2.webp" alt=""></img>
+        <img className="profilePic" src={Profile2} alt=""></img>
         <p className="name">Name</p>
         <progress className="intimacy" max="100" value="70">
           70%
