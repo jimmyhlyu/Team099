@@ -13,7 +13,7 @@ import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
 
 import "./App.css";
-import Logo from "./4.jpg";
+import Logo from "./logo_bg.png";
 
 function App() {
   FirestoreTest();
