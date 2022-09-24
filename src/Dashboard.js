@@ -7,7 +7,7 @@ function Dashboard() {
       <div className="dashTop">
         <p className="title">Dashboard</p>
 
-        <div className="container">
+        <div className="dashContainer">
           <form action="" className="parent">
             <input
               type="text"

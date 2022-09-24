@@ -4,6 +4,7 @@
 }
 
 .dashBody {
+  width: 93vw;
   background-image: url("bgc.png");
   background-size: 100% 100%;
   height: 100vh;
@@ -12,16 +13,21 @@
 }
 
 .dashTop {
+  width: 70vw;
   display: flex;
   justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  align-items: center;
+  height: 15vh;
 }
 
 .title {
   font-size: 50px;
   color: #ff6868;
-  margin-left: 6%;
-  margin-top: 1%;
-  display: inline-block;
+  /*margin-left: 6%;
+  margin-top: 1%;*/
+  /*display: inline-block;*/
 }
 
 .friend {
@@ -50,18 +56,13 @@
   padding-top: 2%;
 }
 
-.container {
-  height: 70px;
-  width: 800px;
-  margin: 100px auto 0 auto;
+.dashContainer {
+  /*height: 70px;*/
+  /*width: 800px;*/
+  /*margin: 100px auto 0 auto;*/
 }
 .parent {
   position: relative;
-}
-.container {
-  height: 70px;
-  width: 800px;
-  margin: 100px auto 0 auto;
 }
 
 .parent {
@@ -76,8 +77,8 @@
   border-radius: 18px;
   outline: none;
   border: 1px solid #ccc;
-  padding-left: 20px;
-  position: absolute;
+  /*padding-left: 20px;
+  position: absolute;*/
 }
 .btn {
   height: 35px;
