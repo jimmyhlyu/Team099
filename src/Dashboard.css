@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
 }
-body {
+
+.dashBody {
   background-image: url("bgc.png");
   background-size: 100% 100%;
 }
@@ -19,29 +20,6 @@ body {
   margin-left: 6%;
   margin-top: 1%;
   display: inline-block;
-}
-
-.sideBarButton {
-  width: 60px;
-  height: 50px;
-  margin: 20px 20px;
-  cursor: pointer;
-  background-size: 100% 100%;
-}
-.home {
-  background-image: url("home.png");
-}
-.add {
-  background-image: url("plus.png");
-}
-.person {
-  background-image: url("person.png");
-}
-.light {
-  background-image: url("light.png");
-}
-.exit {
-  background-image: url("exit.png");
 }
 
 .friend {

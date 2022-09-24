@@ -18,7 +18,7 @@ import Logo from "./logo_bg.png";
 function App() {
   FirestoreTest();
   return (
-    <>
+    <body>
       <div class="sideBar">
         <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
         <Nav.Link className="add sideBarButton"></Nav.Link>
@@ -35,7 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </body>
   );
 }
 

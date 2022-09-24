@@ -3,7 +3,7 @@ import Profile1 from "./proPic1.png";
 import Profile2 from "./proPic2.webp";
 function Dashboard() {
   return (
-    <>
+    <div className="dashBody">
       <p className="title">Dashboard</p>
 
       <div className="container">
@@ -38,7 +38,7 @@ function Dashboard() {
           70%
         </progress>
       </div>
-    </>
+    </div>
   );
 }
 
