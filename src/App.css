@@ -3,6 +3,13 @@
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.sideBar {
+  background-color: #1b2a40;
+  width: 8%;
+  height: 100vh;
+  float: left;
+}
+
 .sideBarButton {
   width: 60px;
   height: 50px;
@@ -25,3 +32,4 @@
 .exit {
   background-image: url("exit.png");
 }
+
