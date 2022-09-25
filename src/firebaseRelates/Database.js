@@ -21,11 +21,10 @@ export function TestConnection(){
 
 
 export function AddUser(dict){
-    let data = new FormData();
-    fetch(Url,{
+    let method = "user/add/" + JSON.stringify(dict)
+    fetch(Url + method,{
         "method" : "POST",
         "headers" : {"Content-Type" : "application/json"},
-        "body" : JSON.stringify(data),
     } ).then(
         response => {
             if(response.ok == true){
@@ -37,3 +36,25 @@ export function AddUser(dict){
         }
     )
 }
+
+export function UpdateUser(id,dict){
+    id = "100001"
+    id = id + "/"
+    dict = {"name" : "changeName"}
+    let method = "user/update/" + id +JSON.stringify(dict)
+    fetch(Url + method,{
+        "method" : "PATCH",
+        "headers" : {"Content-Type" : "application/json"},
+    } ).then(
+        response => {
+            if(response.ok == true){
+                console.log("User updating, Result: success");
+            }
+            else {
+                console.log("User updating, Result: fail")
+            }
+        }
+    )
+}
+
+

@@ -20,8 +20,6 @@ async function FirestoreTest() {
   } else {
     console.log("Fail getting data from firestore");
   }
-
-  return <h1>ys</h1>;
 }
 
 export default FirestoreTest;

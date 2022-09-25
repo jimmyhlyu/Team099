@@ -39,7 +39,7 @@ def add_user(user_dict: dict | str):
 
     user = User.from_dict(user_dict)
     db.collection('users').document(user.id).set(user.to_dict())
-
+    return "Success"
 
 @app.route('/user/delete/<string:user_id>', methods=['DELETE'])
 def delete_user(user_id: str):
@@ -59,7 +59,7 @@ def update_user(user_id: str, params_dict: dict | str):
         params_dict = loads(params_dict)
 
     db.collection('users').document(user_id).update({f'{k}': v for k, v in params_dict.items()})
-
+    return "Success"
 
 def get_latest_weights(user_id: str):
     user = db.collection('users').where('id', '==', user_id).get()
