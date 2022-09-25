@@ -1,14 +1,11 @@
 from datetime import datetime, timedelta
-
 import pandas as pd
 import numpy as np
 from google.cloud.firestore_v1 import DocumentSnapshot
-
 from database.data_classes import User, Connection
 from database.helpful_classes import db
 from json import loads, dumps
 from firebase_admin import firestore
-
 from flask import Flask
 from flask import request
 from markupsafe import escape
@@ -19,7 +16,7 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-
+# APi created by Mason
 @cross_origin()
 @app.route('/', methods=['GET', 'POST'])
 def hello() -> str:
