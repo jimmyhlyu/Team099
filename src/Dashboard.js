@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div className="dashBody">
       <div className="dashTop">
-        <p className="title">Dashboard</p>
+        <p className="title">Dashboard (WIP)</p>
 
         <div className="dashContainer">
           <form action="" className="parent">

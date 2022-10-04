@@ -1,3 +1,4 @@
 - corresponding navbar icons
 - assets organization
 - jquery script thing
+- fix css overlaps maybe do original entirely

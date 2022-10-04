@@ -8,6 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import AddFriend from "./AddFriend";
+import Survey from "./Survey";
 import Dashboard from "./Dashboard";
 import Profiles from "./Profiles";
 import Login from "./Login";
@@ -31,7 +32,7 @@ function App() {
         <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
         <Nav.Link className="add sideBarButton" href="add-friend"></Nav.Link>
         <Nav.Link className="person sideBarButton" href="profiles"></Nav.Link>
-        <Nav.Link className="light sideBarButton"></Nav.Link>
+        <Nav.Link className="light sideBarButton" href="survey"></Nav.Link>
         <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
       </div>
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profiles" element={<Profiles />} />
+          <Route path="/survey" element={<Survey />} />
         </Routes>
       </BrowserRouter>
     </body>
