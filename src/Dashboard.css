@@ -30,12 +30,25 @@
   /*display: inline-block;*/
 }
 
+/*
 .friend {
   width: 85%;
   height: 150px;
   background-color: #596672;
   margin: 40px 12%;
+  borde
+  r-radius: 10px;
+}*/
+
+.friend {
+  background-image: url("./friendBar.jpeg");
+  background-size: 100% 100%;
+  width: 85%;
+  height: 135px;
+  margin: 30px 12%;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .profilePic {
   width: 100px;
@@ -91,5 +104,20 @@
   outline: none;
   cursor: pointer;
   background-size: 100% 100%;
+}
+
+.intimacy_1 {
+  margin-left: 45%;
+  width: 200px;
+  height: 48px;
+  accent-color: #2ecc71;
+  display: block;
+}
+
+.text {
+  font-size: 20px;
+  float: left;
+  margin-left: 10%;
+  line-height: 48px;
 }
 

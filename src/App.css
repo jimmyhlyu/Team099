@@ -18,6 +18,11 @@
   cursor: pointer;
   background-size: 100% 100%;
 }
+
+.sideBarButton:hover {
+  width: 70px;
+  height: 60px;
+}
 .home {
   background-image: url("home.png");
 }
