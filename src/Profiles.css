@@ -1,5 +1,6 @@
 .profileBody {
   background-color: #2d3f51;
+  height: 100vh;
 }
 
 .profile {
@@ -36,7 +37,7 @@
 
 .profileInfo {
   width: 800px;
-  height: 500px;
+  height: 80vh;
   margin-left: 35%;
   margin-top: -19%;
   background: #596672;
@@ -57,7 +58,9 @@
 .about {
   width: 300px;
   margin-left: 90px;
-  height: 240px;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
 }
 .personality {
   width: 200px;

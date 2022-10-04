@@ -1,2 +1,3 @@
 - corresponding navbar icons
 - assets organization
+- jquery script thing

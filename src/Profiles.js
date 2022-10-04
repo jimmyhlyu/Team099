@@ -1,21 +1,28 @@
 import "./Profiles.css";
 
+import income from "./income.png";
+import phone from "./phone.jpeg";
+import friendship from "./friendShip.png";
+import age from "./age.png";
+import email from "./email.png";
+import edit from "./editPicBtn.png";
+
 function Profiles() {
   return (
     <div className="profileBody">
-      <div className="profile">&nbsp;&nbsp;User Profile</div>
-      <div className="profilePic">
+      <div className="profile">&nbsp;&nbsp;User Profile (WIP)</div>
+      <div className="profilePic2">
         <button className="editPic">
-          <img src="src/editPicBtn.png" />
+          <img src={edit} />
         </button>
       </div>
       <p className="name">Shala Alice</p>
       <div className="profileInfo">
-        <img className="img income" src="src/income.png" alt="" />
-        <img className="img phone" src="src/phone.jpeg" alt="" />
-        <img className="img friend" src="src/friendShip.png" alt="" />
-        <img className="img age" src="src/age.png" alt="" />
-        <img className="img email" src="src/email.png" alt="" />
+        <img className="img income" src={income} alt="" />
+        <img className="img phone" src={phone} alt="" />
+        <img className="img friend" src={friendship} alt="" />
+        <img className="img age" src={age} alt="" />
+        <img className="img email" src={email} alt="" />
         <p className="subTitle AB">About</p>
         <div className="about blockStyle">
           <p className="titleInfo">Age:</p>
