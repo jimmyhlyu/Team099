@@ -2,3 +2,4 @@
 - assets organization
 - jquery script thing
 - fix css overlaps maybe do original entirely
+- everything in 1 big css
