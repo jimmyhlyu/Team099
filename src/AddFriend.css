@@ -1,5 +1,9 @@
-body {
+.addFriend {
   background-color: #2d3f51;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title {
@@ -9,7 +13,7 @@ body {
   margin-left: 8%;
 }
 
-.container {
+.container2 {
   height: 70px;
   width: 1000px;
   margin: 100px auto 0 auto;
@@ -41,6 +45,12 @@ body {
   outline: none;
   cursor: pointer;
   background-size: 100% 100%;
+}
+
+.refreshLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .refresh {
@@ -108,5 +118,6 @@ body {
   float: left;
   margin-left: -28%;
   margin-top: 6%;
+  padding-top: 5px;
 }
 
