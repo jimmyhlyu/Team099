@@ -11,7 +11,12 @@ import AddFriend from "./AddFriend";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
-import {AddUser, GetUser, TestConnection, UpdateUser} from "./firebaseRelates/Database";
+import {
+  AddUser,
+  GetUser,
+  TestConnection,
+  UpdateUser,
+} from "./firebaseRelates/Database";
 import "./App.css";
 import Logo from "./logo_bg.png";
 
@@ -23,7 +28,7 @@ function App() {
     <body>
       <div class="sideBar">
         <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
-        <Nav.Link className="add sideBarButton"></Nav.Link>
+        <Nav.Link className="add sideBarButton" href="add-friend"></Nav.Link>
         <Nav.Link className="person sideBarButton"></Nav.Link>
         <Nav.Link className="light sideBarButton"></Nav.Link>
         <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
