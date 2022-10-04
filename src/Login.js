@@ -11,9 +11,9 @@ function Login() {
         <input type="text" name="username" placeholder="Username/Email"></input>
         <input type="password" name="password" placeholder="Password"></input>
         <p class="forget">Forgot password?</p>
-        <bottonc className="button" onClick={HandleClick.handleSignIn}>
+        <botton className="button" onClick={HandleClick.handleSignIn}>
           Login
-        </bottonc>
+        </botton>
         <botton className="button">Signup</botton>
         <botton class="google">
           <img className="googleImg" src={Google} alt=""></img>
