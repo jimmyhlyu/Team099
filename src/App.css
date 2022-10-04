@@ -20,8 +20,9 @@
 }
 
 .sideBarButton:hover {
-  width: 70px;
-  height: 60px;
+  box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
+  transform: translate(0, -5px);
+  transition-delay: 0s !important;
 }
 .home {
   background-image: url("home.png");
