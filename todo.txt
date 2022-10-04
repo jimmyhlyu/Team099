@@ -1,0 +1,2 @@
+- corresponding navbar icons
+- assets organization

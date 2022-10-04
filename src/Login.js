@@ -1,5 +1,5 @@
 import "./Login.css";
-import Logo from "./4.jpg";
+import Logo from "./logo2.png";
 import Google from "./google.png";
 import * as HandleClick from "./HandleClick";
 function Login() {

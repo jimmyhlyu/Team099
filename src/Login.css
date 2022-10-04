@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("./images.jpeg");
+  background-image: url("./background3.webp");
   background-size: 100% 100%;
 }
 
@@ -22,6 +22,8 @@ body {
   border-radius: 10%;
   float: right;
   display: flex;
+  animation: mymove 1.5s infinite;
+  -webkit-animation: mymove 1.5s infinite;
 }
 .message {
   padding-top: 35%;
@@ -89,3 +91,27 @@ input[type="password"]:focus {
   /*padding-left: 30px;*/
 }
 
+@keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/*Safari 和 Chrome:*/
+@-webkit-keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
