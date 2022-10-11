@@ -1,0 +1,123 @@
+.addFriend {
+  background-color: #2d3f51;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  border-bottom: 2px white solid;
+  font-size: 50px;
+  color: #ff6868;
+  margin-left: 8%;
+}
+
+.container2 {
+  height: 70px;
+  width: 1000px;
+  margin: 100px auto 0 auto;
+}
+
+.parent {
+  margin-top: -3%;
+  margin-left: 19%;
+  position: relative;
+}
+.search {
+  background-color: #f3f3f3;
+  width: 600px;
+  height: 50px;
+  border-radius: 18px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 20px;
+  position: absolute;
+}
+.btn {
+  height: 35px;
+  width: 40px;
+  position: absolute;
+  background: url("./search.png");
+  top: 10px;
+  left: 570px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+
+.refreshLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-right: 27%;
+  cursor: pointer;
+}
+
+.recFriend {
+  width: 700px;
+  height: 100px;
+  border-radius: 10px;
+  margin: 2% 24%;
+  border-bottom: 1px white solid;
+  border-top: 1px white solid;
+}
+
+.addBtn {
+  font-size: 20px;
+  color: #2ecc71;
+  float: right;
+  margin-right: 3%;
+  margin-top: 5.5%;
+  cursor: pointer;
+}
+
+.ignoreBtn {
+  font-size: 20px;
+  color: #ff6868;
+  float: right;
+  margin-right: 5%;
+  margin-top: 5.5%;
+  cursor: pointer;
+}
+
+.recPic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  margin: 2% 3%;
+  float: left;
+}
+
+.recMes {
+  font-size: 20px;
+  margin-left: 24.5%;
+  color: white;
+}
+
+.Name {
+  width: 200px;
+  font-size: 25px;
+  color: white;
+  float: left;
+  margin-left: 1%;
+  margin-top: 1%;
+  border-bottom: 1px white solid;
+}
+
+.friendOf {
+  font-size: 10px;
+  color: grey;
+  float: left;
+  margin-left: -28%;
+  margin-top: 6%;
+  padding-top: 5px;
+}
+

@@ -1,51 +1,49 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import "./AddFriend.css";
+import Refresh from "./refresh.png";
+import pic4 from "./proPic4.webp";
+import pic5 from "./proPic5.jpeg";
+import pic6 from "./priPic6.jpeg";
 
 function AddFriend() {
   return (
     <>
-      <Container>
-        <Row>
-          <Col></Col>
-          <Col sm={12} md={8} lg={6}>
-            <h1 className="text-center">NEW FRIEND</h1>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Name" />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="First Met At" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="First Met On" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Contact Info" />
-              </Form.Group>
-              <Row style={{ justifyContent: "space-between" }}>
-                <Col sm md lg={1}>
-                  <Button variant="danger" type="submit">
-                    Clear
-                  </Button>
-                </Col>
-                <Col sm md lg={1}>
-                  <Button variant="success" type="submit">
-                    Submit
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
+      <div className="addFriend">
+        <div className="title">Add Friends</div>
+        <div className="container2">
+          <form action="" className="parent">
+            <input type="text" class="search" placeholder="add new friends" />
+            <input type="button" name="" id="" class="btn" />
+          </form>
+        </div>
+        <div classNamne="refreshLine">
+          <p className="recMes">Recommended friends for you:</p>
+          <img className="refresh" src={Refresh} />
+        </div>
+        <div className="recFriend">
+          <img className="recPic" src={pic4} alt="" />
+          <p className="Name">John sendhard</p>
+          <p className="friendOf">4 mutual friends</p>
+          <div className="addBtn">Add</div>
+          <div className="ignoreBtn">Ignore</div>
+        </div>
+        <div className="recFriend">
+          <img className="recPic" src={pic5} alt="" />
+          <p className="Name">Aden thorm</p>
+          <p className="friendOf">2 mutual friends</p>
+          <div className="addBtn">Add</div>
+          <div className="ignoreBtn">Ignore</div>
+        </div>
+        <div className="recFriend">
+          <img className="recPic" src={pic6} alt="" />
+          <p className="Name">Andrea Migono</p>
+          <p className="friendOf">5 mutual friends</p>
+          <div className="addBtn">Add</div>
+          <div className="ignoreBtn">Ignore</div>
+        </div>
+      </div>
     </>
   );
 }
 
 export default AddFriend;
+

@@ -1,0 +1,138 @@
+.profileBody {
+  background-color: #2d3f51;
+  height: 100vh;
+}
+
+.profile {
+  border-bottom: 2px white solid;
+  font-size: 50px;
+  color: #ff6868;
+  margin-left: 8%;
+}
+
+.title {
+  font-size: 50px;
+  color: #ff6868;
+  margin-left: 10%;
+  margin-top: 1%;
+}
+
+.profilePic2 {
+  margin-top: 2%;
+  margin-left: 10%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: 100% 100%;
+  background-image: url("./proPic3.jpeg");
+}
+
+.editPic {
+  margin-left: 70%;
+  margin-top: 85%;
+  background: rgba(0, 0, 0, 0);
+  border-style: none;
+  cursor: pointer;
+}
+
+.profileInfo {
+  width: 800px;
+  height: 80vh;
+  margin-left: 35%;
+  margin-top: -19%;
+  background: #596672;
+  border-radius: 1%;
+}
+
+.blockStyle {
+  border-top: #ff6868 1px solid;
+  color: #ff6868;
+  height: 150px;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.SD {
+  width: 400px;
+  margin-left: 30px;
+}
+.about {
+  width: 300px;
+  margin-left: 90px;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+.personality {
+  width: 200px;
+  float: right;
+  margin-top: -52.4%;
+  margin-right: 13%;
+}
+.per {
+  float: right;
+  margin-top: -56%;
+  margin-right: 25%;
+}
+
+.subTitle {
+  margin-left: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.AB {
+  width: 70px;
+  padding-top: 27px;
+  margin-left: 88px;
+}
+
+.name {
+  font-size: 40px;
+  color: #ff6868;
+  margin-left: 12%;
+  margin-top: 2%;
+  float: left;
+}
+
+.pie {
+  width: 250px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.titleInfo {
+  text-align: left;
+}
+.info {
+  text-align: right;
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+.age {
+  margin-top: -26%;
+  margin-left: -5%;
+}
+
+.income {
+  margin-top: -21%;
+  margin-left: 3%;
+}
+
+.email {
+  margin-top: -15%;
+  margin-left: -5%;
+}
+.phone {
+  margin-top: -9%;
+  margin-left: 3%;
+}
+.friend {
+  margin-top: -4%;
+  margin-left: 3%;
+}
+
