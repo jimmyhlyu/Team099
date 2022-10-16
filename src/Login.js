@@ -14,10 +14,9 @@ function Login() {
           Login
         </botton>
         <botton className="button">Signup</botton>
-        {/*<botton class="google">
+        <botton class="google">
           <img className="googleImg" src={Google} alt=""></img>
         </botton>
-        */}
       </div>
     </>
   );
