@@ -10,17 +10,15 @@ function AddFriend() {
       <div class="titleFriend">&nbsp;&nbsp;Add Friend</div>
 
       <div class="signupForm">
-        <form className="signForm" action="" class="form">
-          <div class="inputContainerSign">
-            <input
-              type="text"
-              name="name"
-              class="inputSign"
-              placeholder="Name"
-              value=""
-            ></input>
-          </div>
-          <input type="submit" class="submitBtn2" value="Save"></input>
+        <form className="signForm" action="">
+          <input
+            type="text"
+            name="name"
+            class="inputSign"
+            placeholder="Name"
+            value=""
+          ></input>
+          <input type="submit" class="submitBtn2" value="Add"></input>
         </form>
       </div>
     </div>
