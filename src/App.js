@@ -20,7 +20,7 @@ import {
   UpdateUser,
 } from "./firebaseRelates/Database";
 import "./App.css";
-import Logo from "./logo_bg.png";
+import Logo from "./assets/logo_bg.png";
 
 function App() {
   FirestoreTest();

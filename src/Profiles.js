@@ -1,11 +1,11 @@
 import "./Profiles.css";
 
-import income from "./income.png";
-import phone from "./phone.jpeg";
-import friendship from "./friendShip.png";
-import age from "./age.png";
-import email from "./email.png";
-import edit from "./editPicBtn.png";
+import income from "./assets/income.png";
+import phone from "./assets/phone.jpeg";
+import friendship from "./assets/friendShip.png";
+import age from "./assets/age.png";
+import email from "./assets/email.png";
+import edit from "./assets/editPicBtn.png";
 
 function Profiles() {
   return (

@@ -1,8 +1,8 @@
 import "./AddFriend.css";
-import Refresh from "./refresh.png";
-import pic4 from "./proPic4.webp";
-import pic5 from "./proPic5.jpeg";
-import pic6 from "./priPic6.jpeg";
+import Refresh from "./assets/refresh.png";
+import pic4 from "./assets/proPic4.webp";
+import pic5 from "./assets/proPic5.jpeg";
+import pic6 from "./assets/priPic6.jpeg";
 
 function AddFriend() {
   return (

@@ -1,6 +1,6 @@
 import "./Login.css";
-import Logo from "./logo3.png";
-import Google from "./google.png";
+import Logo from "./assets/logo3.png";
+import Google from "./assets/google.png";
 import * as HandleClick from "./HandleClick";
 function Login() {
   return (

@@ -1,7 +1,7 @@
-- corresponding navbar icons
-- assets organization
-- jquery script thing
+- home is login page when not signed in
+    - is dashboard page when signed in
+- jquery script thing??
 - fix css overlaps maybe do original entirely
-- everything in 1 big css
+- everything in 1 big css?
 - readme
 - favicon and tab titles
