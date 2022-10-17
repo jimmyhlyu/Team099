@@ -11,7 +11,7 @@ body {
 .darkBox {
   background-color: #2d3f51;
   width: 30%;
-  height: 1000px;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
