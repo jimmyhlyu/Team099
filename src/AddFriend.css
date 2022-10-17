@@ -50,20 +50,6 @@
   transform: translateY(-2px);
 }
 
-/*
-.inputSign {
-  position: absolute;
-  height: 100%;
-  width: 450px;
-  border: 1px solid #dadce0;
-  border-radius: 7px;
-  font-size: 16px;
-  padding: 0 20px;
-  outline: none;
-  background: none;
-  z-index: 1;
-}*/
-
 .labelSign {
   position: absolute;
   top: 15px;
@@ -76,9 +62,6 @@
   z-index: 0;
 }
 /*
-
-
-
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px #596672 inset;
   -webkit-text-fill-color: black;
@@ -107,8 +90,8 @@ input:-webkit-autofill {
 
 .input:focus {
   border: 2px solid #2ecc71;
-}
-
+}*/
+/*
 .Img {
   width: 250px;
   height: 250px;

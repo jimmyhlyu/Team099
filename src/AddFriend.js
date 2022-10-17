@@ -16,7 +16,6 @@ function AddFriend() {
             name="name"
             class="inputSign"
             placeholder="Name"
-            value=""
           ></input>
           <input type="submit" class="submitBtn2" value="Add"></input>
         </form>

@@ -8,7 +8,7 @@ function Login() {
       <img src={Logo} className="logo"></img>
       <div className="darkBox">
         <p className="message">Welcome to FSK!</p>
-        <input type="text" name="username" placeholder="Username/Email"></input>
+        <input type="text" name="username" placeholder="Email"></input>
         <input type="password" name="password" placeholder="Password"></input>
         <botton className="button" onClick={HandleClick.handleSignIn}>
           Login
