@@ -10,37 +10,44 @@
   color: #611f86;
   margin-left: 8%;
 }
-/*
-.darkBox {
-  margin-left: 15%;
-  width: 45%;
-}
 
 .signupForm {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .signForm {
-  margin-top: -12%;
-  margin-left: 25%;
+  /*margin-top: -12%;
+  margin-left: 25%*/
   background-color: rgba(89, 102, 114, 0.7);
-  width: 600px;
-  height: 430px;
+  background-color: black;
+  width: 25vw;
+  height: 25vh;
   border-radius: 8px;
   padding: 35px 40px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
 }
 
-.inputContainerSign {
-  position: relative;
-  height: 45px;
-  width: 90%;
-  margin-bottom: 17px;
+.submitBtn2 {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: -42px;
 }
 
+.submitBtn2:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
+}
+
+/*
 .inputSign {
   position: absolute;
   height: 100%;
@@ -52,11 +59,7 @@
   outline: none;
   background: none;
   z-index: 1;
-}
-input:-webkit-autofill {
-  box-shadow: 0 0 0 1000px #596672 inset;
-  -webkit-text-fill-color: black;
-}
+}*/
 
 .labelSign {
   position: absolute;
@@ -69,15 +72,19 @@ input:-webkit-autofill {
   transition: 0.5s;
   z-index: 0;
 }
+/*
+
+
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #596672 inset;
+  -webkit-text-fill-color: black;
+}
 
 ::placeholder {
   color: transparent;
 }
 
-.submitBtn:hover {
-  background-color: #2ecc71;
-  transform: translateY(-2px);
-}
 .input:focus + .label {
   top: -7px;
   left: 3px;
@@ -113,24 +120,6 @@ input:-webkit-autofill {
   height: 30px;
   margin-left: 38%;
   margin-top: 10%;
-}
-
-.submitBtn {
-  display: block;
-  margin-left: auto;
-  padding: 15px 30px;
-  border: none;
-  background-color: #2ecc71;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: -42px;
-}
-
-.submitBtn:hover {
-  background-color: #2ecc71;
-  transform: translateY(-2px);
 }
 
 .imgBox {
