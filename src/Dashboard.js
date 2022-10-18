@@ -9,7 +9,9 @@ function Dashboard() {
     <div className="addFriend">
       <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
 
-      <FriendDash />
+      <div class="friendsList">
+        <FriendDash friendName="Lucy" fam="65" int="12" sim="42" />
+      </div>
 
       <div class="signupForm">
         <form className="signForm" action="">

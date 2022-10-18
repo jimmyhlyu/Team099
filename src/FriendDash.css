@@ -1,0 +1,86 @@
+.friend {
+  background-color: rgba(89, 102, 114, 0.8);
+  width: 85%;
+  height: 135px;
+  margin-left: 12%;
+  margin-top: 3%;
+  border-radius: 10px;
+}
+
+.infoBox {
+  width: 390px;
+  height: 110px;
+  border-right: white 1px solid;
+  float: left;
+  margin-top: 1%;
+}
+
+.addFriend {
+  background-color: rgba(89, 102, 114, 0.5);
+  width: 85%;
+  height: 135px;
+  margin: 30px 12%;
+  border-radius: 10px;
+}
+
+.addFri {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  margin-left: 45%;
+  margin-top: 2%;
+}
+
+.profilePic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: white;
+  margin-left: 3%;
+  margin-top: 1%;
+  float: left;
+}
+
+.name {
+  width: 200px;
+  height: 20px;
+  font-size: 30px;
+  margin-left: 9%;
+  float: left;
+}
+
+.intimacy {
+  margin-top: 9%;
+  margin-left: 5%;
+  width: 185px;
+  height: 45px;
+
+  float: left;
+}
+
+.intimacy_1 {
+  margin-top: -1%;
+  margin-left: 43%;
+  width: 200px;
+  height: 45px;
+
+  display: block;
+}
+
+.text {
+  margin-top: -1%;
+  font-size: 20px;
+  float: left;
+  margin-left: 10%;
+  line-height: 41px;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  margin-top: 2.5%;
+  margin-left: 3.5%;
+  cursor: pointer;
+}
+
