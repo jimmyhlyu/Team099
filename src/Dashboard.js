@@ -10,7 +10,6 @@ function Dashboard() {
       <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
 
       <FriendDash />
-      <FriendDash />
 
       <div class="signupForm">
         <form className="signForm" action="">
