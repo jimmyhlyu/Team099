@@ -1,7 +1,7 @@
 import "./Dashboard.css";
-import Profile1 from "./proPic3.jpeg";
-import Profile2 from "./proPic2.jpeg";
-import Profile3 from "./proPic2.webp";
+import Profile1 from "./assets/proPic3.jpeg";
+import Profile2 from "./assets/proPic2.jpeg";
+import Profile3 from "./assets/proPic2.webp";
 function Dashboard() {
   return (
     <div className="dashBody">

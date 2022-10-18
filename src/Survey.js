@@ -1,5 +1,5 @@
 import "./Survey.css";
-import logo2 from "./logo2.png";
+import logo2 from "./assets/logo2.png";
 
 function Survey() {
   return (

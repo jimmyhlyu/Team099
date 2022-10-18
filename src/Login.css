@@ -4,14 +4,14 @@
 }
 
 body {
-  background-image: url("./background3.webp");
+  background-image: url("./assets/background3.webp");
   background-size: 100% 100%;
 }
 
 .darkBox {
   background-color: #2d3f51;
   width: 30%;
-  height: 1000px;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ body {
 .logo {
   width: 27%;
   height: 44%;
-  margin-right: 22%;
+  margin-right: 17%;
   margin-top: 13%;
   border-radius: 10%;
   float: right;

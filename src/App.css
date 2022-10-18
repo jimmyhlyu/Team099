@@ -25,18 +25,18 @@
   transition-delay: 0s !important;
 }
 .home {
-  background-image: url("home.png");
+  background-image: url("./assets/home.png");
 }
 .add {
-  background-image: url("plus.png");
+  background-image: url("./assets/plus.png");
 }
 .person {
-  background-image: url("person.png");
+  background-image: url("./assets/person.png");
 }
 .light {
-  background-image: url("light.png");
+  background-image: url("./assets/light.png");
 }
 .exit {
-  background-image: url("exit.png");
+  background-image: url("./assets/exit.png");
 }
 

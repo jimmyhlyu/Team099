@@ -1,123 +1,121 @@
 .addFriend {
-  background-color: #2d3f51;
+  background-image: url("./assets/bgc4.gif");
+  background-size: 100% 165%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
-.title {
+.titleFriend {
   border-bottom: 2px white solid;
   font-size: 50px;
-  color: #ff6868;
+  color: #611f86;
   margin-left: 8%;
 }
 
-.container2 {
-  height: 70px;
-  width: 1000px;
-  margin: 100px auto 0 auto;
-}
-
-.parent {
-  margin-top: -3%;
-  margin-left: 19%;
-  position: relative;
-}
-.search {
-  background-color: #f3f3f3;
-  width: 600px;
-  height: 50px;
-  border-radius: 18px;
-  outline: none;
-  border: 1px solid #ccc;
-  padding-left: 20px;
-  position: absolute;
-}
-.btn {
-  height: 35px;
-  width: 40px;
-  position: absolute;
-  background: url("./search.png");
-  top: 10px;
-  left: 570px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-size: 100% 100%;
-}
-
-.refreshLine {
+.signupForm {
   display: flex;
-  justify-content: space-between;
+  height: 80vh;
+  justify-content: center;
   align-items: center;
 }
 
-.refresh {
-  width: 20px;
-  height: 20px;
-  float: right;
-  margin-right: 27%;
+.signForm {
+  /*margin-top: -12%;
+  margin-left: 25%*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(89, 102, 114, 0.7);
+  width: 25vw;
+  height: 25vh;
+  border-radius: 8px;
+  padding: 35px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+}
+
+.submitBtn2 {
+  display: block;
+  margin-left: auto;
+  padding: 5px 30px;
+  border: none;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  margin-top: -42px;
 }
 
-.recFriend {
-  width: 700px;
-  height: 100px;
-  border-radius: 10px;
-  margin: 2% 24%;
-  border-bottom: 1px white solid;
-  border-top: 1px white solid;
+.submitBtn2:hover {
+  background-color: #2ecc71;
+  transform: translateY(-2px);
 }
 
-.addBtn {
-  font-size: 20px;
+.labelSign {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: rgba(89, 102, 114, 0.7);
+  color: #dadce0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+/*
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #596672 inset;
+  -webkit-text-fill-color: black;
+}
+
+::placeholder {
+  color: transparent;
+}
+
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
   color: #2ecc71;
-  float: right;
-  margin-right: 3%;
-  margin-top: 5.5%;
-  cursor: pointer;
 }
 
-.ignoreBtn {
-  font-size: 20px;
-  color: #ff6868;
-  float: right;
-  margin-right: 5%;
-  margin-top: 5.5%;
-  cursor: pointer;
+.input:not(:placeholder-shown) + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.recPic {
+.input:focus {
+  border: 2px solid #2ecc71;
+}*/
+/*
+.Img {
+  width: 250px;
+  height: 250px;
+  background-image: url("./assets/proPic3.jpeg");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  margin-left: 9%;
+}
+
+.imageUpload {
   width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  margin: 2% 3%;
-  float: left;
+  height: 30px;
+  margin-left: 38%;
+  margin-top: 10%;
 }
 
-.recMes {
-  font-size: 20px;
-  margin-left: 24.5%;
-  color: white;
+.imgBox {
+  margin-top: -46%;
+  margin-left: 10%;
+  width: 300px;
+  height: 400px;
+  background-color: rgba(89, 102, 114, 0.7);
+  border-radius: 15px;
+  padding-top: 3%;
 }
-
-.Name {
-  width: 200px;
-  font-size: 25px;
-  color: white;
-  float: left;
-  margin-left: 1%;
-  margin-top: 1%;
-  border-bottom: 1px white solid;
-}
-
-.friendOf {
-  font-size: 10px;
-  color: grey;
-  float: left;
-  margin-left: -28%;
-  margin-top: 6%;
-  padding-top: 5px;
-}
+*/
 
