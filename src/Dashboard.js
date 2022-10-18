@@ -5,7 +5,7 @@ import Profile3 from "./assets/proPic2.webp";
 
 import FriendDash from "./FriendDash";
 import Friend from "./Friend";
-let friends = [Friend("Mason", 12, 12, 41)];
+let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
 
 function Dashboard() {
   return (
@@ -13,12 +13,16 @@ function Dashboard() {
       <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
 
       <div class="friendsList">
-        <FriendDash
-          friendName={friends[0].friendName}
-          fam={friends[0].fam}
-          int={friends[0].int}
-          sim={friends[0].sim}
-        />
+        {friends.map(function (friend) {
+          return (
+            <FriendDash
+              friendName={friend.friendName}
+              fam={friend.fam}
+              int={friend.int}
+              sim={friend.sim}
+            />
+          );
+        })}
       </div>
 
       <div class="signupForm">
