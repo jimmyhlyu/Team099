@@ -19,6 +19,24 @@ function AddFriend() {
             class="inputSign"
             placeholder="Name"
           ></input>
+          <input
+            type="text"
+            name="status"
+            class="inputSign"
+            placeholder="Status"
+          ></input>
+          <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <input type="date" name="firstMet" class="inputSign"></input>
+          <input
+            type="number"
+            name="hours"
+            class="inputSign"
+            placeholder="Hours Spent"
+          ></input>
           <input type="submit" class="submitBtn22" value="Add"></input>
         </form>
       </div>
