@@ -31,6 +31,6 @@ export function signInWithEmail(email, password) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      window.alert("signIn email, Result: success, Error message: " + errorMessage);
+      window.alert("signIn email, Result: fail, Error message: " + errorMessage);
     });
 }
