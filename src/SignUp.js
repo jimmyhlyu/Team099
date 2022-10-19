@@ -2,6 +2,7 @@ import "./SignUp.css";
 import Logo from "./assets/logo3.png";
 import Google from "./assets/google.png";
 import * as HandleClick from "./HandleClick";
+import {handleSignUp} from "./HandleClick";
 
 function SignUp() {
     return (
@@ -28,7 +29,8 @@ function SignUp() {
                                 <input type="password" className="input" placeholder="a" />
                                 <label className="label">Confirm Password</label>
                             </div>
-                            <input type="submit" className="submitBtn" defaultValue="Sign up" />
+                            <button className="Signup" onClick={HandleClick.handleSignUp}>
+                            </button>
                         </form>
                     </div>
                 </div>
