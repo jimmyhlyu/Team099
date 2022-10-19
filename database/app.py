@@ -87,6 +87,7 @@ def add_connection(user_id: str, connection_dict: dict | str):
     if isinstance(connection_dict, str):
         connection_dict = loads(connection_dict)
 
+    print(connection_dict)
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     connection = Connection.from_dict(connection_dict)
 
@@ -101,13 +102,13 @@ def add_connection(user_id: str, connection_dict: dict | str):
         'connection': connection.to_dict(),
         'timestamp': firestore.firestore.SERVER_TIMESTAMP
     })
+    return "successful"
 
 
 @app.route('/connection/delete/<string:user_id>/<string:connection_id>', methods=['DELETE'])
 def delete_connection(user_id: str, connection_id: str):
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
-
     for doc in docs:
         # remove reference to connection in user
         user.remove_connection(Connection.from_dict(doc.to_dict()['connection']))
@@ -120,7 +121,7 @@ def delete_connection(user_id: str, connection_id: str):
 # pending deprecation
 @app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>/<int:inplace>',
            methods=['PATCH'])
-def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=False):
+def update_on_survey_submit( : str, answers: dict | str, inplace=False):
     if isinstance(answers, str):
         answers = loads(answers)
     if isinstance(inplace, int):

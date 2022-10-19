@@ -13,8 +13,8 @@ function Login() {
         <botton className="button" onClick={HandleClick.handleSignIn}>
           Login
         </botton>
-        <botton className="button">Signup</botton>
-        <botton class="google">
+        <botton className="button" onClick={HandleClick.handleSignUp}>Signup</botton>
+        <botton class="google" onClick={HandleClick.test}>
           <img className="googleImg" src={Google} alt=""></img>
         </botton>
       </div>

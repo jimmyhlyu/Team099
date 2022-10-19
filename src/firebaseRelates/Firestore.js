@@ -7,6 +7,8 @@ import {
   getFirestore,
 } from "firebase/firestore";
 
+import {AddConnection} from "./Database"
+
 import { useState } from "react";
 
 async function FirestoreTest() {

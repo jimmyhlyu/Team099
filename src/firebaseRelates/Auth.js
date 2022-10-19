@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import app from "./Firebase";
+import {AddUser} from "./Database";
 
 const auth = getAuth(app);
 export function createAccWithEmail(email, password) {
@@ -11,6 +12,7 @@ export function createAccWithEmail(email, password) {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log("createAcc Email, Result: success");
+      AddUser({id : user.uid, name : user.email });
     })
     .catch((error) => {
       const errorCode = error.code;
