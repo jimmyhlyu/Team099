@@ -34,7 +34,7 @@ function Profile() {
               type="checkbox"
               id="friendship"
               name="friendship"
-              value="Bike"
+              value="friendship"
             />
             <label for="friendship">Looking for Friendship</label>
           </div>
@@ -43,12 +43,12 @@ function Profile() {
               type="checkbox"
               id="relationship"
               name="relationship"
-              value="Car"
+              value="relationship"
             />
             <label for="relationship">Looking for Relationship</label>
           </div>
           <div class="radio">
-            <input type="checkbox" id="career" name="career" value="Boat" />
+            <input type="checkbox" id="career" name="career" value="career" />
             <label for="career">Loking for Career</label>
           </div>
           <input type="submit" class="submitBtn22" value="Save"></input>
