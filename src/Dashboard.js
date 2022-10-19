@@ -18,21 +18,19 @@ function Dashboard({ friends }) {
 
   return (
     <div className="dashboard">
-      <div className="addFriend">
-        <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
+      <div class="dashTitle">&nbsp;&nbsp;Dashboard</div>
 
-        <div class="friendsList">
-          {friends.map(function (friend) {
-            return (
-              <FriendDash
-                friendName={friend.friendName}
-                fam={friend.fam}
-                int={friend.int}
-                sim={friend.sim}
-              />
-            );
-          })}
-        </div>
+      <div class="friendsList">
+        {friends.map(function (friend) {
+          return (
+            <FriendDash
+              friendName={friend.friendName}
+              fam={friend.fam}
+              int={friend.int}
+              sim={friend.sim}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -8,13 +8,13 @@
 - clean up files
 - readme
 - favicon and tab titles
+- explanation page
+- profile pic and other info later
 
-> Friend class list in dashboard to display 
 > Edit surveys for each friend
 > Add friends on backend, needs unique id
 > Retrieve friends from backend
-> Explanation page later
-> Redirect login to home or just move
-> Later profile pic other info
+> Redirect login to home after success
 > Jimmy needs to make everything
 communicate with and retrieve from backend
+

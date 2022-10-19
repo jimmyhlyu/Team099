@@ -1,20 +1,14 @@
-.dashBody {
-  width: 93vw;
-  background-image: url("./assets/bgc.png");
-  background-size: 100% 100%;
+.dashboard {
+  background-image: url("./assets/bgc4.gif");
+  background-size: 100% 165%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-.dashTop {
-  width: 70vw;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  align-items: center;
-  height: 15vh;
+.dashTitle {
+  border-bottom: 2px white solid;
+  font-size: 50px;
+  color: #611f86;
+  margin-left: 8%;
 }
 
 .title {
@@ -70,12 +64,6 @@
 /*width: 800px;*/
 /*margin: 100px auto 0 auto;*/ /*
 }*/
-
-.parent {
-  margin-top: -20%;
-  margin-left: 77%;
-  position: relative;
-}
 /*
 .search {
   background-color: #f3f3f3;
