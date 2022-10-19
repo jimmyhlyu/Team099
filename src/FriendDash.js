@@ -4,7 +4,7 @@ import editBtn from "./assets/editBtn.png";
 import infoBtn from "./assets/infoBtn.png";
 import deleteBtn from "./assets/deleteBtn.png";
 
-function FriendDash({ friendName, fam, int, sim }) {
+function FriendDash({ friendName, fam, int, sim, id }) {
   return (
     <>
       <div class="friend">
@@ -27,7 +27,13 @@ function FriendDash({ friendName, fam, int, sim }) {
           <progress class="intimacy_1" max="100" value={int}></progress>
           <progress class="intimacy_1" max="100" value={sim}></progress>
         </div>
-        <img src={editBtn} alt="" />
+        <img
+          src={editBtn}
+          alt=""
+          onClick={() => {
+            alert(id);
+          }}
+        />
         <img src={infoBtn} alt="" />
         <img src={deleteBtn} alt="" />
       </div>

@@ -7,12 +7,12 @@ import FriendDash from "./FriendDash";
 import Friend from "./Friend";
 import useState, { useEffect } from "react";
 let friends = [
-  Friend("Mason", 12, 12, 41),
-  Friend("Lucy", 15, 52, 42),
-  Friend("Lucy", 15, 52, 42),
-  Friend("Lucy", 15, 52, 42),
-  Friend("Lucy", 15, 52, 42),
-  Friend("Lucy", 15, 52, 42),
+  Friend("Mason", 12, 12, 41, 1),
+  Friend("Lucy", 15, 52, 42, 2),
+  Friend("Lucy", 15, 52, 42, 3),
+  Friend("Lucy", 15, 52, 42, 4),
+  Friend("Lucy", 15, 52, 42, 5),
+  Friend("Lucy", 15, 52, 42, 6),
 ];
 
 function Dashboard() {
@@ -40,6 +40,7 @@ function Dashboard() {
               fam={friend.fam}
               int={friend.int}
               sim={friend.sim}
+              id={friend.id}
             />
           );
         })}
