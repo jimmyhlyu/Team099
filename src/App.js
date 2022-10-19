@@ -31,7 +31,7 @@ function App() {
       <div class="sideBar">
         <Nav.Link className="home sideBarButton" href="dashboard"></Nav.Link>
         <Nav.Link className="add sideBarButton" href="add-friend"></Nav.Link>
-        <Nav.Link className="person sideBarButton" href="profiles"></Nav.Link>
+        {/*<Nav.Link className="person sideBarButton" href="profiles"></Nav.Link>*/}
         {/*<Nav.Link className="light sideBarButton" href="survey"></Nav.Link>*/}
         <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
       </div>

@@ -2,114 +2,49 @@ import "./Dashboard.css";
 import Profile1 from "./assets/proPic3.jpeg";
 import Profile2 from "./assets/proPic2.jpeg";
 import Profile3 from "./assets/proPic2.webp";
-function Dashboard() {
-  return (
-    <div className="dashBody">
-      <div className="dashTop">
-        <p className="title">Dashboard (WIP)</p>
 
-        <div className="dashContainer">
-          <form action="" className="parent">
-            <input
-              type="text"
-              className="search"
-              placeholder="search friends"
-            ></input>
-            <input type="button" name="" id="" className="btn"></input>
-          </form>
-        </div>
-      </div>
-      <div className="dashFriends">
-        <div className="friend">
-          <img className="profilePic" src={Profile1} alt=""></img>
-          <p className="name">Alice</p>
-          <progress className="intimacy" max="100" value="70">
-            70%
-          </progress>
-          <div>
-            <p className="text">
-              matric1 {"\n"} matric2 {"\n"} matric3
-            </p>
-          </div>
-          <progress
-            className="intimacy_1"
-            id="1"
-            max="100"
-            value="90"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="2"
-            max="100"
-            value="80"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="3"
-            max="100"
-            value="60"
-          ></progress>
-        </div>
-        <div className="friend">
-          <img className="profilePic" src={Profile2} alt=""></img>
-          <p className="name">Richard</p>
-          <progress className="intimacy" max="100" value="50">
-            50%
-          </progress>
-          <div>
-            <p className="text">
-              matric1 {"\n"} matric2 {"\n"} matric3
-            </p>
-          </div>
-          <progress
-            className="intimacy_1"
-            id="1"
-            max="100"
-            value="90"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="2"
-            max="100"
-            value="80"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="3"
-            max="100"
-            value="60"
-          ></progress>
-        </div>
-        <div className="friend">
-          <img className="profilePic" src={Profile3} alt=""></img>
-          <p className="name">Lucy</p>
-          <progress className="intimacy" max="100" value="95">
-            95%
-          </progress>
-          <div>
-            <p className="text">
-              matric1 {"\n"} matric2 {"\n"} matric3
-            </p>
-          </div>
-          <progress
-            className="intimacy_1"
-            id="1"
-            max="100"
-            value="90"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="2"
-            max="100"
-            value="80"
-          ></progress>
-          <progress
-            className="intimacy_1"
-            id="3"
-            max="100"
-            value="60"
-          ></progress>
-        </div>
+import FriendDash from "./FriendDash";
+import Friend from "./Friend";
+import useState, { useEffect } from "react";
+let friends = [
+  Friend("Mason", 12, 12, 41, 1),
+  Friend("Lucy", 15, 52, 42, 2),
+  Friend("Lucy", 15, 52, 42, 3),
+  Friend("Lucy", 15, 52, 42, 4),
+  Friend("Lucy", 15, 52, 42, 5),
+  Friend("Lucy", 15, 52, 42, 6),
+];
+
+function Dashboard() {
+  /*
+  function addFriend(name) {
+    friends.push(Friend(name, 0, 0, 0));
+  }*/
+
+  //const [friends2, addFriends] = useState(friends);
+
+  useEffect(() => {
+    /* To Jimmy: Here. retrieve friends from
+      backend then ammend to friends array */
+  }, []);
+
+  return (
+    <div className="dashboard">
+      <div class="dashTitle">&nbsp;&nbsp;Dashboard</div>
+
+      <div class="friendsList">
+        {friends.map(function (friend) {
+          return (
+            <FriendDash
+              friendName={friend.friendName}
+              fam={friend.fam}
+              int={friend.int}
+              sim={friend.sim}
+              id={friend.id}
+            />
+          );
+        })}
+        <div class="submitSurveys">Update Weightings</div>
       </div>
     </div>
   );

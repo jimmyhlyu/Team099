@@ -1,24 +1,24 @@
-.addFriend {
+.addFriend2 {
   background-image: url("./assets/bgc4.gif");
   background-size: 100% 165%;
   height: 100vh;
 }
 
-.titleFriend {
+.titleFriend2 {
   border-bottom: 2px white solid;
   font-size: 50px;
   color: #611f86;
   margin-left: 8%;
 }
 
-.signupForm {
+.signupForm2 {
   display: flex;
   height: 80vh;
   justify-content: center;
   align-items: center;
 }
 
-.signForm {
+.signForm2 {
   /*margin-top: -12%;
   margin-left: 25%*/
   display: flex;
@@ -32,7 +32,7 @@
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
 }
 
-.submitBtn2 {
+.submitBtn22 {
   display: block;
   margin-left: auto;
   padding: 5px 30px;
@@ -45,12 +45,12 @@
   margin-top: -42px;
 }
 
-.submitBtn2:hover {
+.submitBtn22:hover {
   background-color: #2ecc71;
   transform: translateY(-2px);
 }
 
-.labelSign {
+.labelSign2 {
   position: absolute;
   top: 15px;
   left: 15px;
