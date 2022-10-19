@@ -4,6 +4,9 @@ import editBtn from "./assets/editBtn.png";
 import infoBtn from "./assets/infoBtn.png";
 import deleteBtn from "./assets/deleteBtn.png";
 
+import SurveyPopup from "./SurveyPopup";
+import Popup from "reactjs-popup";
+
 function FriendDash({ friendName, fam, int, sim, id }) {
   return (
     <>
@@ -27,14 +30,28 @@ function FriendDash({ friendName, fam, int, sim, id }) {
           <progress class="intimacy_1" max="100" value={int}></progress>
           <progress class="intimacy_1" max="100" value={sim}></progress>
         </div>
+        <Popup
+          trigger={
+            <img
+              src={editBtn}
+              alt=""
+              onClick={() => {
+                alert(id);
+              }}
+            />
+          }
+        >
+          <h1>test {id}</h1>
+        </Popup>
+        {/*
         <img
           src={editBtn}
           alt=""
           onClick={() => {
             alert(id);
           }}
-        />
-        <img src={infoBtn} alt="" />
+        />*/}
+        <img src={infoBtn} alt="" onClick={() => {}} />
         <img src={deleteBtn} alt="" />
       </div>
     </>
