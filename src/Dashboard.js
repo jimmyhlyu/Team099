@@ -5,36 +5,34 @@ import Profile3 from "./assets/proPic2.webp";
 
 import FriendDash from "./FriendDash";
 import Friend from "./Friend";
-let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
+import useState from "react";
+//let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
 
-function Dashboard() {
+function Dashboard({ friends }) {
+  /*
+  function addFriend(name) {
+    friends.push(Friend(name, 0, 0, 0));
+  }*/
+
+  //const [friends2, addFriends] = useState(friends);
+
   return (
-    <div className="addFriend">
-      <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
+    <div className="dashboard">
+      <div className="addFriend">
+        <div class="titleFriend">&nbsp;&nbsp;Dashboard</div>
 
-      <div class="friendsList">
-        {friends.map(function (friend) {
-          return (
-            <FriendDash
-              friendName={friend.friendName}
-              fam={friend.fam}
-              int={friend.int}
-              sim={friend.sim}
-            />
-          );
-        })}
-      </div>
-
-      <div class="signupForm">
-        <form className="signForm" action="">
-          <input
-            type="text"
-            name="name"
-            class="inputSign"
-            placeholder="Name"
-          ></input>
-          <input type="submit" class="submitBtn2" value="Add"></input>
-        </form>
+        <div class="friendsList">
+          {friends.map(function (friend) {
+            return (
+              <FriendDash
+                friendName={friend.friendName}
+                fam={friend.fam}
+                int={friend.int}
+                sim={friend.sim}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

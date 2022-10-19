@@ -4,20 +4,22 @@ import pic4 from "./assets/proPic4.webp";
 import pic5 from "./assets/proPic5.jpeg";
 import pic6 from "./assets/priPic6.jpeg";
 
-function AddFriend() {
-  return (
-    <div className="addFriend">
-      <div class="titleFriend">&nbsp;&nbsp;Add Friend</div>
+import Friend from "./Friend";
 
-      <div class="signupForm">
-        <form className="signForm" action="">
+function AddFriend({ friends }) {
+  return (
+    <div className="addFriend2">
+      <div class="titleFriend2">&nbsp;&nbsp;Add Friend</div>
+
+      <div class="signupForm2">
+        <form className="signForm2" action="">
           <input
             type="text"
             name="name"
             class="inputSign"
             placeholder="Name"
           ></input>
-          <input type="submit" class="submitBtn2" value="Add"></input>
+          <input type="submit" class="submitBtn22" value="Add"></input>
         </form>
       </div>
     </div>

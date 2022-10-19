@@ -1,3 +1,5 @@
+import "./FriendDash.css";
+
 function FriendDash({ friendName, fam, int, sim }) {
   return (
     <>
