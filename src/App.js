@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddFriend from "./AddFriend";
 import Survey from "./Survey";
 import Dashboard from "./Dashboard";
-import Profiles from "./Profiles";
+import Profile from "./Profile";
 import Login from "./Login";
 import FirestoreTest from "./firebaseRelates/Firestore";
 import {
@@ -31,7 +31,7 @@ function App() {
       <div class="sideBar">
         <Nav.Link className="home sideBarButton" href="/"></Nav.Link>
         <Nav.Link className="add sideBarButton" href="add-friend"></Nav.Link>
-        {/*<Nav.Link className="person sideBarButton" href="profiles"></Nav.Link>*/}
+        <Nav.Link className="person sideBarButton" href="profile"></Nav.Link>
         {/*<Nav.Link className="light sideBarButton" href="survey"></Nav.Link>*/}
         <Nav.Link className="exit sideBarButton" href="login"></Nav.Link>
       </div>
@@ -41,8 +41,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profiles" element={<Profiles />} />
-          {/*<Route path="/survey" element={<Survey />} /> */}
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </body>

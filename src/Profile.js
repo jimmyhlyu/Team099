@@ -1,4 +1,4 @@
-import "./Profiles.css";
+import "./Profile.css";
 
 import income from "./assets/income.png";
 import phone from "./assets/phone.jpeg";
@@ -7,7 +7,7 @@ import age from "./assets/age.png";
 import email from "./assets/email.png";
 import edit from "./assets/editPicBtn.png";
 
-function Profiles() {
+function Profile() {
   return (
     <div className="profileBody">
       <div className="profile">&nbsp;&nbsp;User Profile (WIP)</div>
@@ -51,5 +51,5 @@ function Profiles() {
   );
 }
 
-export default Profiles;
+export default Profile;
 

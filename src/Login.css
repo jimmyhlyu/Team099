@@ -12,6 +12,7 @@ body {
   background-color: #2d3f51;
   width: 30%;
   height: 100vh;
+  margin-left: 7vw;
 
   display: flex;
   flex-direction: column;

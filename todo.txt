@@ -23,3 +23,12 @@ and reload page
 > Jimmy needs to make everything
 communicate with and retrieve from backend
 
+dashboard adjust
+fix colours
+login system
+user details
+friend profile 
+delete account
+data_classes for friend profile
+
+image.png
