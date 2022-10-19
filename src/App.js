@@ -21,9 +21,6 @@ import {
 } from "./firebaseRelates/Database";
 import "./App.css";
 import Logo from "./assets/logo_bg.png";
-import Friend from "./Friend";
-
-let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
 
 function App() {
   FirestoreTest();
@@ -42,8 +39,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<></>} />
-          <Route path="/dashboard" element={<Dashboard friends={friends} />} />
-          <Route path="/add-friend" element={<AddFriend friends={friends} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profiles" element={<Profiles />} />
           {/*<Route path="/survey" element={<Survey />} /> */}

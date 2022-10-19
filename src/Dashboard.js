@@ -6,9 +6,9 @@ import Profile3 from "./assets/proPic2.webp";
 import FriendDash from "./FriendDash";
 import Friend from "./Friend";
 import useState, { useEffect } from "react";
-//let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
+let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
 
-function Dashboard({ friends }) {
+function Dashboard() {
   /*
   function addFriend(name) {
     friends.push(Friend(name, 0, 0, 0));
