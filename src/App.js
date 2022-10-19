@@ -21,6 +21,7 @@ import {
 } from "./firebaseRelates/Database";
 import "./App.css";
 import Logo from "./assets/logo_bg.png";
+import SignUp from "./SignUp";
 
 function App() {
   FirestoreTest();
@@ -42,6 +43,7 @@ function App() {
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login/signUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </body>

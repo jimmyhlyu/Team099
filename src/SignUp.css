@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("assets/src/loadingBGC.jpeg");
+    background-size: 100% 100%;
+}
+
+.darkBox{
+    background-color: #2D3f51;
+    width: 40%;
+    height: 1000px;
+}
+
+.logo{
+    width: 27%;
+    height: 44%;
+    margin-right: 15%;
+    margin-top: 12%;
+    border-radius: 10%;
+    float: right;
+    display: flex;
+    animation:mymove 1.5s infinite;
+    -webkit-animation:mymove 1.5s infinite;
+}
+
+@keyframes mymove{
+    0% {transform: translate(0px, 0px);}
+    50% {transform: translate(0px, -20px);}
+    100% {transform: translate(0px, 0px);}
+
+}
+
+
+
+.signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: #596672;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: #2ecc71;
+}
+
+.inputContainer {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+}
+
+.input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    z-index: 1;
+}
+
+
+.label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: #596672;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.submitBtn:hover {
+    background-color: #2ecc71;
+    transform: translateY(-2px);
+}
+.input:focus + .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2ecc71;
+}
+
+.input:not(:placeholder-shown)+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input:focus {
+    border: 2px solid #2ecc71;
+}
+

@@ -2,6 +2,8 @@ import "./Login.css";
 import Logo from "./assets/logo3.png";
 import Google from "./assets/google.png";
 import * as HandleClick from "./HandleClick";
+import {Link, Route, Router} from 'react-router-dom';
+import SignUp from "./SignUp";
 function Login() {
   return (
     <>
@@ -13,7 +15,9 @@ function Login() {
         <botton className="button" onClick={HandleClick.handleSignIn}>
           Login
         </botton>
-        <botton className="button" onClick={HandleClick.handleSignUp}>Signup</botton>
+        <Link to="/login/signUp">
+          <botton className="button">signUp</botton>
+        </Link>
         <botton class="google" onClick={HandleClick.test}>
           <img className="googleImg" src={Google} alt=""></img>
         </botton>
