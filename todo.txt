@@ -14,6 +14,7 @@
 > "Update" button to push surveys to backend
 and reload page
 > Visualizations...
+> Exceed page height
 > Edit surveys for each friend
 > Add friends on backend, needs unique id
 > Retrieve friends from backend

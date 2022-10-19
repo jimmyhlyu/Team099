@@ -27,6 +27,26 @@
   /*display: inline-block;*/
 }
 
+.submitSurveys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ff6868;
+  font-size: 50px;
+
+  background-color: rgba(89, 102, 114, 0.8);
+  width: 90%;
+  height: 135px;
+  margin-left: 3%;
+  margin-top: -4%;
+  border-radius: 10px;
+}
+
+.submitSurveys:hover {
+  background-color: rgba(89, 102, 114, 0.95);
+}
+
 /*
 .friend {
   width: 85%;
