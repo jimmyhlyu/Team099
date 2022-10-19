@@ -5,19 +5,23 @@ import {
 } from "firebase/auth";
 import app from "./Firebase";
 import {AddUser} from "./Database";
+import {Navigate} from "react-router-dom";
+
 
 const auth = getAuth(app);
-export function createAccWithEmail(email, password) {
+export async function createAccWithEmail(email, password) {
+
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
       console.log("createAcc Email, Result: success");
       AddUser({id : user.uid, name : user.email });
+      window.location.href = "/"
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log("createAcc Email,Result: fails, Error message: " + errorMessage);
+      window.alert(errorMessage);
     });
 }
 
@@ -28,7 +32,8 @@ export function signInWithEmail(email, password) {
       const user = userCredential.user;
       console.log("user = " + user.email);
       window.alert("signIn email, Result: success");
-      // ...
+
+      window.location.href = "/";
     })
     .catch((error) => {
       const errorCode = error.code;

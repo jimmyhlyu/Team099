@@ -43,7 +43,7 @@ function App() {
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login/signUp" element={<SignUp />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </body>

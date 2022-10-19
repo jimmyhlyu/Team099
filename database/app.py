@@ -121,7 +121,7 @@ def delete_connection(user_id: str, connection_id: str):
 # pending deprecation
 @app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>/<int:inplace>',
            methods=['PATCH'])
-def update_on_survey_submit( : str, answers: dict | str, inplace=False):
+def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=False):
     if isinstance(answers, str):
         answers = loads(answers)
     if isinstance(inplace, int):

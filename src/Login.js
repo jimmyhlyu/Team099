@@ -1,25 +1,27 @@
-import "./Login.css";
+import styles from './Login.module.css';
 import Logo from "./assets/logo3.png";
 import Google from "./assets/google.png";
 import * as HandleClick from "./HandleClick";
 import {Link, Route, Router} from 'react-router-dom';
 import SignUp from "./SignUp";
+import {handleSignUp} from "./HandleClick";
 function Login() {
   return (
     <>
-      <img src={Logo} className="logo"></img>
-      <div className="darkBox">
-        <p className="message">Welcome to FSK!</p>
-        <input type="text" name="username" placeholder="Email"></input>
-        <input type="password" name="password" placeholder="Password"></input>
-        <botton className="button" onClick={HandleClick.handleSignIn}>
+      <img src={Logo} className={styles.logo}></img>
+      <div className={styles.darkBox}>
+        <p className={styles.message}>Welcome to FSK!</p>
+        <input type="text" className={styles.accountAndPassword} placeholder="Email" name = "username"></input>
+        <input type="password" className={styles.accountAndPassword} placeholder="Password" name = "password"></input>
+        <p className={styles.forget}>forget password?</p>
+        <botton className={styles.button} onClick={HandleClick.handleSignIn}>
           Login
         </botton>
-        <Link to="/login/signUp">
-          <botton className="button">signUp</botton>
+        <Link to="/signUp">
+          <botton className={styles.button}>signUp</botton>
         </Link>
-        <botton class="google" onClick={HandleClick.test}>
-          <img className="googleImg" src={Google} alt=""></img>
+        <botton className={styles.google} onClick={HandleClick.handleSignUp}>
+          <img className={styles.googleImg} src={Google} alt=""></img>
         </botton>
       </div>
     </>

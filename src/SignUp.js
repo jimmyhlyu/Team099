@@ -14,23 +14,22 @@ function SignUp() {
                         <form action className="form">
                             <h1 className="title">Sign up</h1>
                             <div className="inputContainer">
-                                <input type="text" className="input" placeholder="a" />
+                                <input type="text" className="input" name = "username" />
                                 <label className="label">Email</label>
                             </div>
                             <div className="inputContainer">
-                                <input type="text" className="input" placeholder="a" />
+                                <input type="text" className="input" name = "email" />
                                 <label className="label">Username</label>
                             </div>
                             <div className="inputContainer">
-                                <input type="password" className="input" placeholder="a" />
+                                <input type="password" className="input" name = "password" />
                                 <label className="label">Password</label>
                             </div>
                             <div className="inputContainer">
-                                <input type="password" className="input" placeholder="a" />
+                                <input type="password" className="input" name = "confirm password" />
                                 <label className="label">Confirm Password</label>
                             </div>
-                            <button className="Signup" onClick={HandleClick.handleSignUp}>
-                            </button>
+                            <input type="submit" className="submitBtn" value="Sign up" onClick={HandleClick.handleSignUp}/>
                         </form>
                     </div>
                 </div>

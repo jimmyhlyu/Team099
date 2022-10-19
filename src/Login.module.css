@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./assets/background3.webp");
+  background-size: 100% 100%;
+}
+
+.darkBox {
+  background-color: #2d3f51;
+  width: 30%;
+  height: 100vh;
+  margin-left: 7vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 27%;
+  height: 44%;
+  margin-right: 17%;
+  margin-top: 13%;
+  border-radius: 10%;
+  float: right;
+  display: flex;
+  animation: mymove 1.5s infinite;
+  -webkit-animation: mymove 1.5s infinite;
+}
+.message {
+  padding-top: 35%;
+  text-align: center;
+  font-size: 30px;
+  color: #ff6868;
+}
+
+.accountAndPassword{
+  border-radius: 15px;
+  border: 2px solid grey;
+  background: white;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  padding: 14px 10px;
+  width: 250px;
+  outline: none;
+  color: #ff6868;
+  transition: 0.25s;
+}
+
+.accountAndPassword:focus {
+  width: 280px;
+  border-color: grey;
+  background-color: white;
+}
+
+.button {
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid #2ecc71;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  padding: 8px 40px;
+  color: white; /* 设置输入框中竖线的颜色 */
+  transition: 0.25s;
+  cursor: pointer; /* 设置光标的样式 */
+}
+.button:hover {
+  background: #2ecc71;
+}
+
+.forget {
+  text-decoration: none;
+  color: #2ecc71;
+  text-align: center;
+  font-size: 10px;
+}
+.google {
+  border-radius: 10px;
+  width: 104px;
+  height: 46px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.googleImg {
+  width: 40px;
+  height: 40px;
+  margin-left: -1%;
+  /*padding-left: 30px;*/
+}
+
+@keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -20px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/*Safari 和 Chrome:*/
+@-webkit-keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.accountAndPassword ::placeholder {
+  color: black;
+}
+

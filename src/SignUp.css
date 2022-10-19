@@ -43,6 +43,7 @@ body{
 }
 
 .form {
+    margin-left: 10%;
     background-color: #596672;
     width: 400px;
     border-radius: 8px;
@@ -54,6 +55,7 @@ body{
     font-size: 30px;
     margin-bottom: 50px;
     color: #2ecc71;
+    margin-left: 5%;
 }
 
 .inputContainer {
@@ -73,6 +75,7 @@ body{
     padding: 0 20px;
     outline: none;
     z-index: 1;
+    background-color: transparent;
 }
 
 .label {
@@ -89,10 +92,12 @@ body{
 
 
 ::placeholder {
-    color: transparent;
+    color: gray;
 }
 
 .submitBtn {
+    width: 150px;
+    height: 50px;
     display: block;
     margin-left: auto;
     padding: 15px 30px;
