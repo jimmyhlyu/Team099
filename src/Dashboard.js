@@ -16,16 +16,9 @@ let friends = [
 ];
 
 function Dashboard() {
-  /*
-  function addFriend(name) {
-    friends.push(Friend(name, 0, 0, 0));
-  }*/
-
-  //const [friends2, addFriends] = useState(friends);
-
   useEffect(() => {
     /* To Jimmy: Here. retrieve friends from
-      backend then ammend to friends array */
+      backend then ammend to friends array. */
   }, []);
 
   return (
