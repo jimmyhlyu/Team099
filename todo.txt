@@ -11,6 +11,7 @@
 - explanation page
 - profile pic and other info later
 
+> Colours!!
 > "Update" button to push surveys to backend
 and reload page
 > Visualizations...
