@@ -1,5 +1,9 @@
 import "./FriendDash.css";
 
+import editBtn from "./assets/editBtn.png";
+import infoBtn from "./assets/infoBtn.png";
+import deleteBtn from "./assets/deleteBtn.png";
+
 function FriendDash({ friendName, fam, int, sim }) {
   return (
     <>
@@ -23,9 +27,9 @@ function FriendDash({ friendName, fam, int, sim }) {
           <progress class="intimacy_1" max="100" value={int}></progress>
           <progress class="intimacy_1" max="100" value={sim}></progress>
         </div>
-        <img src="src/editBtn.png" alt="" />
-        <img src="src/infoBtn.png" alt="" />
-        <img src="src/deleteBtn.png" alt="" />
+        <img src={editBtn} alt="" />
+        <img src={infoBtn} alt="" />
+        <img src={deleteBtn} alt="" />
       </div>
     </>
   );
