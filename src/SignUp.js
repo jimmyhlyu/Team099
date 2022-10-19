@@ -14,11 +14,11 @@ function SignUp() {
                         <form action className="form">
                             <h1 className="title">Sign up</h1>
                             <div className="inputContainer">
-                                <input type="text" className="input" name = "username" />
+                                <input type="text" className="input" name = "email" />
                                 <label className="label">Email</label>
                             </div>
                             <div className="inputContainer">
-                                <input type="text" className="input" name = "email" />
+                                <input type="text" className="input" name = "username" />
                                 <label className="label">Username</label>
                             </div>
                             <div className="inputContainer">

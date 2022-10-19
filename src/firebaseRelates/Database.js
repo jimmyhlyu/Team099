@@ -27,7 +27,7 @@ export function TestConnection(){
 
 export function AddUser(dict){
     let method = "user/add/" + JSON.stringify(dict)
-    console.log("add user = " + method);
+
     fetch(Url + method,{
         "method" : "POST",
         "headers" : {"Content-Type" : "application/json"},
@@ -123,12 +123,15 @@ export function AddConnection(id,dict){
             else {
                 console.log("Connection adding, Result: fail")
             }
+            return "success";
         }
     ).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("Connection adding,Result: fails, Error message: " + errorMessage);
+        return error;
     });
+    return null;
 }
 
 export function GetConnectionScore(id, connectionId){
@@ -139,7 +142,7 @@ export function GetConnectionScore(id, connectionId){
     } ).then(data => {
             data.text().then(
                 text => {
-                    console.log(text);
+                    return JSON.parse(text);
                 }
             )
         }

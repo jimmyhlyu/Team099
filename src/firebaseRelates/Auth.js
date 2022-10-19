@@ -9,14 +9,19 @@ import {Navigate} from "react-router-dom";
 
 
 const auth = getAuth(app);
+
+
 export async function createAccWithEmail(email, password) {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+
+      window.localStorage.setItem("user",user.uid);
+      console.log("this is uid" + window.localStorage.getItem("user"));
       console.log("createAcc Email, Result: success");
       AddUser({id : user.uid, name : user.email });
-      window.location.href = "/"
+      window.location.href = "/login"
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -30,7 +35,7 @@ export function signInWithEmail(email, password) {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      console.log("user = " + user.email);
+      window.sessionStorage.setItem("user",user.uid);
       window.alert("signIn email, Result: success");
 
       window.location.href = "/";

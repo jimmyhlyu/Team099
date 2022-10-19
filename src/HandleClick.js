@@ -1,5 +1,6 @@
 import * as Auth from "./firebaseRelates/Auth";
-import {AddConnection} from "./firebaseRelates/Database";
+import {AddConnection, AddUser} from "./firebaseRelates/Database";
+import {getFriends} from "./firebaseRelates/Firestore";
 export function handleSignIn() {
   const userName = document.getElementsByName("username")[0].value;
   const userPassWord = document.getElementsByName("password")[0].value;
@@ -16,15 +17,30 @@ export function handleSignUp(e) {
     return window.alert("Passwords not matched")
   }
   else{
+    console.log(email);
     Auth.createAccWithEmail(email, userPassWord);
   }
 }
 
 
-
+export function handleAddFirend(e){
+  e.preventDefault();
+  const name = document.getElementsByName("addFriendsName")[0].value;
+  const status = document.getElementsByName("addFriendsStatus")[0].value;
+  const gender = document.getElementsByName("addFriendsGender")[0].value;
+  const firstMet = document.getElementsByName("addFriendsDateFirstMet")[0].value;
+  const hours = document.getElementsByName("addFriendsDateHours")[0].value;
+  const id = sessionStorage.getItem("user");
+  const sector = "FRIENDSHIP";
+  const dict = {name : name, status : "LEAD",
+                gender : "MALE", date_first_met : firstMet,
+                hours_spent_together : hours,sector : 'FRIENDSHIP'};
+  AddConnection(id, dict);
+  window.alert("Add friend successfully");
+}
 
 
 
 export function test(){
-  AddConnection("DeBvDVfhnJOu6L5MsmGcpdU2KWn2", { name : 'Check', age : 23, gender : 'FEMALE', sector : 'FRIENDSHIP'});
+  getFriends();
 }
