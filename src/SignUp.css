@@ -75,7 +75,6 @@ body{
     z-index: 1;
 }
 
-
 .label {
     position: absolute;
     top: 15px;
@@ -87,6 +86,7 @@ body{
     transition: 0.5s;
     z-index: 0;
 }
+
 
 ::placeholder {
     color: transparent;
