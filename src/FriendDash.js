@@ -7,6 +7,30 @@ import deleteBtn from "./assets/deleteBtn.png";
 import Popup from "reactjs-popup";
 
 function FriendDash({ friendName, fam, int, sim, id }) {
+  var cor = document.getElementsByTagName("progress");
+
+  for (var i = 0; i < cor.length; i++) {
+    if (cor.item(i).value >= 80) {
+      cor.item(i).style.accentColor = "#57f396";
+    }
+    if (75 <= cor.item(i).value && cor.item(i).value < 80) {
+      cor.item(i).style.accentColor = "#b9ff9f";
+    }
+
+    if (60 <= cor.item(i).value && cor.item(i).value < 75) {
+      cor.item(i).style.accentColor = "#f7fb98";
+    }
+
+    if (40 <= cor.item(i).value && cor.item(i).value < 60) {
+      cor.item(i).style.accentColor = "#ffcd89";
+    }
+    if (20 <= cor.item(i).value && cor.item(i).value < 40) {
+      cor.item(i).style.accentColor = "#ff777b";
+    }
+    if (cor.item(i).value < 20) {
+      cor.item(i).style.accentColor = "#f85656";
+    }
+  }
   return (
     <>
       <div class="friend">
