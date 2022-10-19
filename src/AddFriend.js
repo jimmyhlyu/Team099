@@ -6,7 +6,7 @@ import pic6 from "./assets/priPic6.jpeg";
 
 import Friend from "./Friend";
 
-function AddFriend({ friends }) {
+function AddFriend() {
   return (
     <div className="addFriend2">
       <div class="titleFriend2">&nbsp;&nbsp;Add Friend</div>

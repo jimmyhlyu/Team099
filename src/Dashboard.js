@@ -5,7 +5,7 @@ import Profile3 from "./assets/proPic2.webp";
 
 import FriendDash from "./FriendDash";
 import Friend from "./Friend";
-import useState from "react";
+import useState, { useEffect } from "react";
 //let friends = [Friend("Mason", 12, 12, 41), Friend("Lucy", 15, 52, 42)];
 
 function Dashboard({ friends }) {
@@ -15,6 +15,11 @@ function Dashboard({ friends }) {
   }*/
 
   //const [friends2, addFriends] = useState(friends);
+
+  useEffect(() => {
+    /* To Jimmy: Here. retrieve friends from
+      backend then ammend to friends array */
+  }, []);
 
   return (
     <div className="dashboard">
