@@ -1,5 +1,5 @@
-const Friend = (friendName, fam, int, sim, id) => {
-  return { friendName, fam, int, sim, id };
+const Friend = (friendName, fam, int, sim, id, details) => {
+  return { friendName, fam, int, sim, id, details };
 };
 
 export default Friend;
