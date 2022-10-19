@@ -23,6 +23,7 @@ and reload page
 > Jimmy needs to make everything
 communicate with and retrieve from backend
 
+tell rollins make pages work on screen sizes
 dashboard adjust
 fix colours
 login system
