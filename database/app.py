@@ -1,4 +1,6 @@
 from datetime import datetime, timedelta
+from typing import Tuple
+
 import pandas as pd
 import numpy as np
 from google.cloud.firestore_v1 import DocumentSnapshot
@@ -58,10 +60,11 @@ def update_user(user_id: str, params_dict: dict | str):
     db.collection('users').document(user_id).update({f'{k}': v for k, v in params_dict.items()})
     return "Success"
 
-def get_latest_weights(user_id: str):
-    user = db.collection('users').where('id', '==', user_id).get()
-    sector_weights = user.social_preference['sector_weights']
-    metric_weights = user.social_preference['metric_weights']
+
+def get_latest_weights(user_id: str) -> Tuple[dict, dict]:
+    user = db.collection('users').where('id', '==', user_id).get()[0].to_dict()
+    sector_weights = user['social_preference']['sector_weights']
+    metric_weights = user['social_preference']['metric_weights']
     return sector_weights, metric_weights
 
 
@@ -174,22 +177,39 @@ def get_insights_timeline(user_id: str, connection_id: str):
 def _get_insights_timeline(user_id: str, connection_id: str) -> pd.DataFrame:
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
 
-    connections = pd.DataFrame([doc['connection'] for doc in docs])
-    connections['history_id'] = [doc.id for doc in docs]
-    connections['timestamp'] = [doc['timestamp'] for doc in docs]
+    connection_history = []
+    history_ids = []
+    timestamps = []
+
+    for doc in docs:
+        data = doc.to_dict()
+        connection_history.append(data['connection'])
+        history_ids.append(doc.id)
+        timestamps.append(data['timestamp'])
+
+    connections = pd.DataFrame(connection_history)
+    connections['history_id'] = history_ids
+    connections['timestamp'] = timestamps
     connections = connections.set_index('timestamp').sort_index()
 
     sector_weights, metric_weights = get_latest_weights(user_id)
-    metrics = pd.json_normalize(connections[['metrics']])
-    most_recent = connections[-1]
+    metrics = pd.json_normalize(connections['metrics'])
+    most_recent = connections.iloc[-1, :]
 
     metrics = metrics.mul(metric_weights)
-    sector_weight = sector_weights[most_recent['sector']]
+    sector_weight = sector_weights[most_recent['sector'].lower()]
 
     connections['value'] = \
         metrics[['charm', 'usefulness', 'nexus', 'toxicity']].rolling(3).mean().mean() * sector_weight
     connections['efficiency'] = \
         metrics[['how_much_they_like_us', 'companionship', 'closeness']].rolling(3).mean().mean()
-    connections['intensity'] = 1 - 1 / metrics.rolling('30d', min_periods=1).count()
+
+    connections['value'] = connections['value'].fillna(0)
+    connections['efficiency'] = connections['efficiency'].fillna(0.5)
+
+    try:
+        connections['intensity'] = 1 - 1 / metrics.rolling('10d').count()
+    except ValueError:
+        connections['intensity'] = 0.5
 
     return connections[['history_id', 'value', 'efficiency', 'intensity']].reset_index(drop=False)
