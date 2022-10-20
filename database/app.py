@@ -4,6 +4,7 @@ from typing import Tuple
 import pandas as pd
 import numpy as np
 from google.cloud.firestore_v1 import DocumentSnapshot
+
 from database.data_classes import User, Connection
 from database.helpful_classes import db
 from json import loads, dumps
@@ -38,7 +39,7 @@ def add_user(user_dict: dict | str):
 
     user = User.from_dict(user_dict)
     db.collection('users').document(user.id).set(user.to_dict())
-    return "Success"
+
 
 @app.route('/user/delete/<string:user_id>', methods=['DELETE'])
 def delete_user(user_id: str):
@@ -58,7 +59,6 @@ def update_user(user_id: str, params_dict: dict | str):
         params_dict = loads(params_dict)
 
     db.collection('users').document(user_id).update({f'{k}': v for k, v in params_dict.items()})
-    return "Success"
 
 
 def get_latest_weights(user_id: str) -> Tuple[dict, dict]:
@@ -90,7 +90,6 @@ def add_connection(user_id: str, connection_dict: dict | str):
     if isinstance(connection_dict, str):
         connection_dict = loads(connection_dict)
 
-    print(connection_dict)
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     connection = Connection.from_dict(connection_dict)
 
@@ -105,13 +104,13 @@ def add_connection(user_id: str, connection_dict: dict | str):
         'connection': connection.to_dict(),
         'timestamp': firestore.firestore.SERVER_TIMESTAMP
     })
-    return "successful"
 
 
 @app.route('/connection/delete/<string:user_id>/<string:connection_id>', methods=['DELETE'])
 def delete_connection(user_id: str, connection_id: str):
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     docs = db.collection('connectionHistory').where('connection.id', '==', connection_id).stream()
+
     for doc in docs:
         # remove reference to connection in user
         user.remove_connection(Connection.from_dict(doc.to_dict()['connection']))
