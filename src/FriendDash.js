@@ -467,6 +467,19 @@ function FriendDash({ friendName, fam, int, sim, id }) {
             </form>
           </div>
         </Popup>
+        <Popup
+          trigger={
+            <img
+              src={infoBtn}
+              alt=""
+              onClick={() => {
+                alert(id);
+              }}
+            />
+          }
+        >
+          <div>PROFILE PLACEHOLDER</div>
+        </Popup>
         {/*
         <img
           src={editBtn}
@@ -475,7 +488,6 @@ function FriendDash({ friendName, fam, int, sim, id }) {
             alert(id);
           }}
         />*/}
-        <img src={infoBtn} alt="" onClick={() => {}} />
         <img src={deleteBtn} alt="" />
       </div>
     </>
