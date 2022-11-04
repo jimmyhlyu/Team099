@@ -6,6 +6,7 @@ import {
 import app from "./Firebase";
 import {AddUser} from "./Database";
 import {Navigate} from "react-router-dom";
+import {setDoc} from "firebase/firestore";
 
 
 const auth = getAuth(app);
@@ -21,6 +22,7 @@ export async function createAccWithEmail(email, password) {
       console.log("this is uid" + window.localStorage.getItem("user"));
       console.log("createAcc Email, Result: success");
       AddUser({id : user.uid, name : user.email });
+
       window.location.href = "/login"
     })
     .catch((error) => {

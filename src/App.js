@@ -26,7 +26,6 @@ import SignUp from "./SignUp";
 function App() {
   FirestoreTest();
   TestConnection();
-  UpdateUser();
   return (
     <body>
       <div class="sideBar">

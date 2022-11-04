@@ -5,7 +5,6 @@ import * as HandleClick from "./HandleClick";
 import { Link, Route, Router } from "react-router-dom";
 import SignUp from "./SignUp";
 import { handleSignUp } from "./HandleClick";
-import { getFriends } from "./firebaseRelates/Firestore";
 function Login() {
   return (
     <>
@@ -31,7 +30,7 @@ function Login() {
         <Link to="/signUp">
           <button className={styles.button}>Sign Up</button>
         </Link>
-        <button className={styles.google} onClick={getFriends}>
+        <button className={styles.google} onClick={HandleClick.test}>
           <img className={styles.googleImg} src={Google} alt=""></img>
         </button>
       </div>

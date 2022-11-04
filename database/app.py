@@ -90,6 +90,7 @@ def add_connection(user_id: str, connection_dict: dict | str):
     if isinstance(connection_dict, str):
         connection_dict = loads(connection_dict)
 
+    print(db.collection('users').document(user_id).get().to_dict())
     user = User.from_dict(db.collection('users').document(user_id).get().to_dict())
     connection = Connection.from_dict(connection_dict)
 

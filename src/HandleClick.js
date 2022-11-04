@@ -1,6 +1,8 @@
 import * as Auth from "./firebaseRelates/Auth";
-import {AddConnection, AddUser} from "./firebaseRelates/Database";
+import {AddConnection, AddUser, GetConnectionScore, GetUserConnections} from "./firebaseRelates/Database";
 import {getFriends} from "./firebaseRelates/Firestore";
+
+
 export function handleSignIn() {
   const userName = document.getElementsByName("username")[0].value;
   const userPassWord = document.getElementsByName("password")[0].value;
@@ -42,5 +44,5 @@ export function handleAddFirend(e){
 
 
 export function test(){
-  getFriends();
+  GetUserConnections("IgVKqxXvJTZSa7wx0IjWKCx40uu1");
 }
