@@ -7,7 +7,7 @@ import FriendDash from "./FriendDash";
 import Friend from "./Friend";
 import useState, { useEffect } from "react";
 let friends = [
-  Friend("Jon", "12", "25", "75", 1, []),
+  Friend("Thanos", "12", "25", "75", 1, []),
   Friend("Lucy", "15", "52", "42", 2, []),
   Friend("Bob", "15", "12", "42", 3, []),
   Friend("Lucy2", "15", "100", "46", 4, []),

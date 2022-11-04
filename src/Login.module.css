@@ -36,7 +36,7 @@ body {
   color: #ff6868;
 }
 
-.accountAndPassword{
+.accountAndPassword {
   border-radius: 15px;
   border: 2px solid grey;
   background: white;
@@ -64,7 +64,8 @@ body {
   margin: 10px auto;
   text-align: center;
   padding: 8px 40px;
-  color: white; /* 设置输入框中竖线的颜色 */
+  color: grey; /* 设置输入框中竖线的颜色 */
+  background-color: white;
   transition: 0.25s;
   cursor: pointer; /* 设置光标的样式 */
 }
