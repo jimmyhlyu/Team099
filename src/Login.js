@@ -23,7 +23,6 @@ function Login() {
           placeholder="Password"
           name="password"
         ></input>
-        <p className={styles.forget}>forget password?</p>
         <button className={styles.button} onClick={HandleClick.handleSignIn}>
           Login
         </button>
