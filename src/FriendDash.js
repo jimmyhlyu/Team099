@@ -7,7 +7,7 @@ import useState, { useEffect } from "react";
 
 import Popup from "reactjs-popup";
 
-function FriendDash({ friendName, fam, int, sim, id }) {
+function FriendDash({ friendName, fam, int, sim }) {
   var cor = document.getElementsByTagName("progress");
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function FriendDash({ friendName, fam, int, sim, id }) {
               src={editBtn}
               alt=""
               onClick={() => {
-                alert(id);
+                alert("test");
               }}
             />
           }
@@ -477,7 +477,7 @@ function FriendDash({ friendName, fam, int, sim, id }) {
               src={infoBtn}
               alt=""
               onClick={() => {
-                alert(id);
+                alert("test");
               }}
             />
           }
