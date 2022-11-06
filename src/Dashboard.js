@@ -9,17 +9,26 @@ import { useState, useEffect } from "react";
 import { GetUserConnections } from "./firebaseRelates/Database";
 
 function Dashboard() {
-  const [friends, setData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await GetUserConnections(sessionStorage.getItem("user"));
-      console.log(data);
-      setData(data);
-    };
-    fetchData();
-  });
+    let [friends, setData] = useState([]);
+    useEffect(  () => {
+        const fetchData = async () => {
+            // Get friends array from backend 
+            // This is async function, returning a Promise
+            const data = await GetUserConnections(sessionStorage.getItem("user"));
+            // temporary val, the stackoverflow asks to do so
+            const newData = data;
+            // setted friends array done
+            console.log("set friends array")
+            setData(newData);
+            
+    }
+    fetchData().catch(console.error);
+    }, []);  // Use effect dependency = [], to aviod infinity loop
 
-  return (
+    // log data outside useEffect but not display in following return()
+    console.log(friends)
+
+ return (
     <div className="dashboard">
       <div class="dashTitle">&nbsp;&nbsp;Dashboard</div>
 
