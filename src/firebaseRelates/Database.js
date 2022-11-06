@@ -114,7 +114,7 @@ export async function GetUserConnections(id) {
 
 
         const dictList = promise;
-        console.log(dictList)
+
         Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"]))
         i++;
     }
