@@ -16,16 +16,20 @@ function Dashboard() {
     let [friends, setData] = useState([]);
     useEffect(  () => {
         const fetchData = async () => {
+            // Get friends array from backend 
+            // This is async function, returning a Promise
             const data = await GetUserConnections(sessionStorage.getItem("user"));
+            // temporary val, the stackoverflow asks to do so
             const newData = data;
-            console.log("set")
+            // setted friends array done
+            console.log("set friends array")
             setData(newData);
             
     }
     fetchData().catch(console.error);
-    }, []);
+    }, []);  // Use effect dependency = [], to aviod infinity loop
 
-
+    // log data outside useEffect but not display in following return()
     console.log(friends)
 
     return (
