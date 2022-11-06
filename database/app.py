@@ -122,7 +122,7 @@ def delete_connection(user_id: str, connection_id: str):
 
 
 # pending deprecation
-@app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>/<int:inplace>',
+@app.route('/connection/update/on_survey_submit/<string:connection_id>/<string:answers>',
            methods=['PATCH'])
 def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=False):
     if isinstance(answers, str):
@@ -131,10 +131,11 @@ def update_on_survey_submit(connection_id: str, answers: dict | str, inplace=Fal
         inplace = bool(inplace)
 
     update_connection(connection_id, {
-        'status': answers['status'],
+        'status':  ['status'],
         'hours_spent_together': firestore.firestore.Increment(answers['additional_hours']),
         'metrics': Connection.response_to_metrics(answers)
     }, inplace=inplace)
+    return "Updated"
 
 
 @app.route('/connection/update/<string:connection_id>/<string:params>/<int:inplace>', methods=['PATCH'])
@@ -157,7 +158,7 @@ def update_connection(connection_id: str, params: dict | str, inplace=False):
     for k, v in params.items():
         data[k] = v
 
-    db.collection('connectionHistory').document(f'{doc.id}').add({
+    db.collection('connectionHistory').document(f'{doc.id}').set({
         f'connection': data,
         'timestamp': firestore.firestore.SERVER_TIMESTAMP
     })

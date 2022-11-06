@@ -54,8 +54,7 @@ export function AddUser(dict){
 }
 
 export function UpdateUser(id,dict){
-    id = "100001"
-    id = id + "/"
+
     dict = {"name" : "changeName"}
     let method = "user/update/" + id +JSON.stringify(dict)
     fetch(Url + method,{
@@ -106,7 +105,7 @@ export async function GetUserConnections(id) {
     const querySnapshot = await getDocs(q);
     let Friends = [];
     const allData = querySnapshot.docs.map((doc) => doc.data());
-    console.log(allData[0]);
+
     let i = 0;
     while(i < allData.length){
         let data = allData[i];
@@ -114,8 +113,7 @@ export async function GetUserConnections(id) {
 
 
         const dictList = promise;
-
-        Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"]))
+        Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"],data.connection.id))
         i++;
     }
 
@@ -170,10 +168,12 @@ export  function GetConnectionScore(id, connectionId){
 }
 
 export function UpdateSurveyResult(connectionId, answer){
-    let data = new FormData();
+    answer["additional_hours"] = 0;
     let method = "/connection/update/on_survey_submit/" + connectionId + "/" + JSON.stringify(answer);
+    console.log(method)
     fetch(Url + method,{
-        "method" : "Get"
+        "method" : "PATCH",
+        "headers" : {"Content-Type" : "application/json"},
     } ).then(data => {
             data.text().then(
                 text => {
