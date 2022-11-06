@@ -13,17 +13,20 @@ import {GetUserConnections} from "./firebaseRelates/Database";
 
 
 function Dashboard() {
-    const [friends, setData] = useState([]);
+    let [friends, setData] = useState([]);
     useEffect(  () => {
         const fetchData = async () => {
             const data = await GetUserConnections(sessionStorage.getItem("user"));
-            setData(data);
-
+            const newData = data;
+            console.log("set")
+            setData(newData);
+            
     }
-    fetchData();
-    });
+    fetchData().catch(console.error);
+    }, []);
 
 
+    console.log(friends)
 
     return (
         <div className="dashboard">
@@ -44,7 +47,7 @@ function Dashboard() {
                 <div class="submitSurveys">Update Weightings</div>
             </div>
         </div>
-    );
+        );
 }
 
 export default Dashboard;

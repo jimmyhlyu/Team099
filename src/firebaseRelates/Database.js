@@ -111,15 +111,14 @@ export async function GetUserConnections(id) {
         const promise = await GetConnectionScore(id, data.connection.id);
 
         const list = await promise.text().then( data => {
-
+            
             return data
             }
          );
         let dictList = JSON.parse(list);
-
+        
         Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"]))
     })
-
     return Friends;
 }
 
