@@ -105,20 +105,20 @@ export async function GetUserConnections(id) {
     const q = query(ref, where("connection.user_id", "==", id));
     const querySnapshot = await getDocs(q);
     let Friends = [];
-
-    querySnapshot.forEach(  async val => {
-        let data = val.data();
+    const allData = querySnapshot.docs.map((doc) => doc.data());
+    console.log(allData[0]);
+    let i = 0;
+    while(i < allData.length){
+        let data = allData[i];
         const promise = await GetConnectionScore(id, data.connection.id);
 
-        const list = await promise.text().then( data => {
-            
-            return data
-            }
-         );
-        let dictList = JSON.parse(list);
-        
+
+        const dictList = promise;
+        console.log(dictList)
         Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"]))
-    })
+        i++;
+    }
+
     return Friends;
 }
 
@@ -158,7 +158,7 @@ export  function GetConnectionScore(id, connectionId){
     return fetch(Url + method,{
         "method" : "Get"
     } ).then((data) => {
-        return data;
+        return data.json();
 
         }).catch((error) => {
         const errorCode = error.code;

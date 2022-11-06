@@ -18,15 +18,13 @@ function Dashboard() {
             // temporary val, the stackoverflow asks to do so
             const newData = data;
             // setted friends array done
-            console.log("set friends array")
             setData(newData);
-            
     }
     fetchData().catch(console.error);
     }, []);  // Use effect dependency = [], to aviod infinity loop
 
     // log data outside useEffect but not display in following return()
-    console.log(friends)
+
 
  return (
     <div className="dashboard">
