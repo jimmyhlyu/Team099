@@ -3,12 +3,38 @@ import "./FriendDash.css";
 import editBtn from "./assets/editBtn.png";
 import infoBtn from "./assets/infoBtn.png";
 import deleteBtn from "./assets/deleteBtn.png";
-import useState, { useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 
 import Popup from "reactjs-popup";
+import { UpdateSurveyResult } from "./firebaseRelates/Database";
 
-function FriendDash({ friendName, fam, int, sim }) {
+const surveyReducer = (state, event) => {
+  return {
+    ...state,
+    [event.target.name]: event.target.value,
+  };
+};
+
+function FriendDash({ friendName, fam, int, sim, id }) {
   var cor = document.getElementsByTagName("progress");
+  const [submit, setSubmitting] = useState(false);
+  const [surveyArray, setSurveyVal] = useReducer(surveyReducer, {});
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    window.alert("submitting");
+    console.log(surveyArray);
+    setSubmitting(false);
+    UpdateSurveyResult(id, surveyArray);
+  };
+
+  const handleChange = (event) => {
+    setSurveyVal({
+      name: event.target.name,
+      value: event.target.value,
+    });
+  };
 
   useEffect(() => {
     for (var i = 0; i < cor.length; i++) {
@@ -63,7 +89,7 @@ function FriendDash({ friendName, fam, int, sim }) {
               src={editBtn}
               alt=""
               onClick={() => {
-                alert("test");
+                alert(id);
               }}
             />
           }
@@ -74,39 +100,79 @@ function FriendDash({ friendName, fam, int, sim }) {
               What have you observed in {friendName} during your most recent
               encounter?
             </h3>
-            <form action="" method="post">
+            <form onSubmit={handleSubmit}>
+              <div class="question">
+                <h4 class="questionTitle">Added Hours</h4>
+                <div>
+                  <input
+                    type="number"
+                    name="additional-hours" /*onChange={setSurveyVal}*/
+                  />
+                </div>
+              </div>
+
               <div class="question">
                 <h4 class="questionTitle">Charm</h4>
                 <div>
-                  <input type="radio" id="-2" name="charm" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="charm"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="charm" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="charm"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="charm" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="charm"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="charm" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="charm"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="charm" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="charm"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -116,35 +182,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Closeness</h4>
                 <div>
-                  <input type="radio" id="-2" name="closeness" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="closeness"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="closeness" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="closeness"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="closeness" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="closeness"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="closeness" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="closeness"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="closeness" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="closeness"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -154,35 +250,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Companionship</h4>
                 <div>
-                  <input type="radio" id="-2" name="companionship" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="companionship"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="companionship" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="companionship"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="companionship" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="companionship"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="companionship" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="companionship"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="companionship" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="companionship"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -192,35 +318,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Usefulness</h4>
                 <div>
-                  <input type="radio" id="-2" name="usefulness" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="usefulness"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="usefulness" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="usefulness"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="usefulness" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="usefulness"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="usefulness" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="usefulness"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="usefulness" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="usefulness"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -230,35 +386,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Attraction</h4>
                 <div>
-                  <input type="radio" id="-2" name="attraction" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="attraction"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="attraction" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="attraction"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="attraction" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="attraction"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="attraction" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="attraction"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="attraction" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="attraction"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -292,21 +478,39 @@ function FriendDash({ friendName, fam, int, sim }) {
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="responsiveness" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="responsiveness"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="responsiveness" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="responsiveness"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="responsiveness" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="responsiveness"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -316,35 +520,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Toxicity</h4>
                 <div>
-                  <input type="radio" id="-2" name="toxicity" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="toxicity"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="toxicity" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="toxicity"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="toxicity" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="toxicity"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="toxicity" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="toxicity"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="toxicity" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="toxicity"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -354,35 +588,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Friction</h4>
                 <div>
-                  <input type="radio" id="-2" name="friction" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="friction"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="friction" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="friction"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="friction" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="friction"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="friction" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="friction"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="friction" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="friction"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -392,35 +656,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Nexus</h4>
                 <div>
-                  <input type="radio" id="-2" name="nexus" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="nexus"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="nexus" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="nexus"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="nexus" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="nexus"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="nexus" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="nexus"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="nexus" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="nexus"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -430,35 +724,65 @@ function FriendDash({ friendName, fam, int, sim }) {
               <div class="question">
                 <h4 class="questionTitle">Popularity</h4>
                 <div>
-                  <input type="radio" id="-2" name="popularity" value="-2" />
+                  <input
+                    type="radio"
+                    id="-2"
+                    name="popularity"
+                    value="-2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-2" class="surveyTitle">
                     -2
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="-1" name="popularity" value="-1" />
+                  <input
+                    type="radio"
+                    id="-1"
+                    name="popularity"
+                    value="-1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="-1" class="surveyTitle">
                     -1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="0" name="popularity" value="0" />
+                  <input
+                    type="radio"
+                    id="0"
+                    name="popularity"
+                    value="0"
+                    onChange={setSurveyVal}
+                  />
                   <label for="0" class="surveyTitle">
                     0
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="1" name="popularity" value="1" />
+                  <input
+                    type="radio"
+                    id="1"
+                    name="popularity"
+                    value="1"
+                    onChange={setSurveyVal}
+                  />
                   <label for="1" class="surveyTitle">
                     1
                   </label>
                 </div>
 
                 <div>
-                  <input type="radio" id="2" name="popularity" value="2" />
+                  <input
+                    type="radio"
+                    id="2"
+                    name="popularity"
+                    value="2"
+                    onChange={setSurveyVal}
+                  />
                   <label for="2" class="surveyTitle">
                     2
                   </label>
@@ -477,7 +801,7 @@ function FriendDash({ friendName, fam, int, sim }) {
               src={infoBtn}
               alt=""
               onClick={() => {
-                alert("test");
+                alert(id);
               }}
             />
           }

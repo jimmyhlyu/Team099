@@ -54,8 +54,7 @@ export function AddUser(dict){
 }
 
 export function UpdateUser(id,dict){
-    id = "100001"
-    id = id + "/"
+
     dict = {"name" : "changeName"}
     let method = "user/update/" + id +JSON.stringify(dict)
     fetch(Url + method,{
@@ -105,20 +104,19 @@ export async function GetUserConnections(id) {
     const q = query(ref, where("connection.user_id", "==", id));
     const querySnapshot = await getDocs(q);
     let Friends = [];
+    const allData = querySnapshot.docs.map((doc) => doc.data());
 
-    querySnapshot.forEach(  async val => {
-        let data = val.data();
+    let i = 0;
+    while(i < allData.length){
+        let data = allData[i];
         const promise = await GetConnectionScore(id, data.connection.id);
 
-        const list = await promise.text().then( data => {
-            
-            return data
-            }
-         );
-        let dictList = JSON.parse(list);
-        
-        Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"]))
-    })
+
+        const dictList = promise;
+        Friends.push(Friend(data.connection.name, dictList["value"]["0"],dictList["intensity"]["0"],dictList["efficiency"]["0"],data.connection.id))
+        i++;
+    }
+
     return Friends;
 }
 
@@ -158,7 +156,7 @@ export  function GetConnectionScore(id, connectionId){
     return fetch(Url + method,{
         "method" : "Get"
     } ).then((data) => {
-        return data;
+        return data.json();
 
         }).catch((error) => {
         const errorCode = error.code;
@@ -170,10 +168,12 @@ export  function GetConnectionScore(id, connectionId){
 }
 
 export function UpdateSurveyResult(connectionId, answer){
-    let data = new FormData();
+    answer["additional_hours"] = 0;
     let method = "/connection/update/on_survey_submit/" + connectionId + "/" + JSON.stringify(answer);
+    console.log(method)
     fetch(Url + method,{
-        "method" : "Get"
+        "method" : "PATCH",
+        "headers" : {"Content-Type" : "application/json"},
     } ).then(data => {
             data.text().then(
                 text => {

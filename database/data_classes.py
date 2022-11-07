@@ -144,4 +144,12 @@ class Connection:
 
     @staticmethod
     def response_to_metrics(response: dict) -> dict:
-        pass
+        return {
+                'charm': int(response['charm']),
+                'closeness': int(response['closeness']),
+                'companionship': int(response['companionship']),
+                'usefulness': int(response['usefulness']),
+                'how_much_they_like_us': int(response['attraction']),
+                'toxicity': int(response['toxicity']),
+                'nexus': int(response['nexus']),
+            }
