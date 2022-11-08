@@ -8,7 +8,7 @@
 }
 
 .infoBox {
-  width: 390px;
+  width: 430px;
   height: 110px;
   border-right: white 1px solid;
   float: left;
@@ -35,10 +35,17 @@
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  background-color: transparent;
+  background-color: #2D3f51;
   margin-left: 3%;
   margin-top: 1%;
   float: left;
+}
+
+.friendName{
+  font-size: 40px;
+  color: #ff6868;
+  margin-left: 38%;
+  margin-top: 20%;
 }
 
 .name {
@@ -50,7 +57,7 @@
 }
 
 .intimacy {
-  margin-top: 9%;
+  margin-top: 6%;
   margin-left: 5%;
   width: 185px;
   height: 45px;
@@ -107,4 +114,3 @@ img {
   gap: 4px;
   align-items: center;
 }
-
