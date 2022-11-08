@@ -41,8 +41,7 @@ export function handleAddFirend(e){
   window.alert("Add friend successfully");
 }
 
-
-
-export function test(){
+ export function test(){
   GetUserConnections("IgVKqxXvJTZSa7wx0IjWKCx40uu1");
 }
+

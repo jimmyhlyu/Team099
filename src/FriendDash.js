@@ -63,11 +63,15 @@ function FriendDash({ friendName, fam, int, sim, id }) {
     }
   }, []);
 
+  let text = friendName;
+  let letter = text.charAt(0);
+
   return (
     <>
       <div class="friend">
         <div class="infoBox">
-          <img class="profilePic" alt="" />
+           <div class="profilePic"><p class="friendName">{letter}</p></div>
+
           <p class="name">{friendName}</p>
           <progress class="intimacy" max="100" value="75"></progress>
         </div>
@@ -499,19 +503,7 @@ function FriendDash({ friendName, fam, int, sim, id }) {
             </form>
           </div>
         </Popup>
-        <Popup
-          trigger={
-            <img
-              src={infoBtn}
-              alt=""
-              onClick={() => {
-                alert(id);
-              }}
-            />
-          }
-        >
-          <div>PROFILE PLACEHOLDER</div>
-        </Popup>
+
         {/*
         <img
           src={editBtn}
