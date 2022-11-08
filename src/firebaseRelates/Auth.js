@@ -12,17 +12,17 @@ import {setDoc} from "firebase/firestore";
 const auth = getAuth(app);
 
 
-export async function createAccWithEmail(email, password) {
+export  function createAccWithEmail(email, password) {
 
-  await createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+   createUserWithEmailAndPassword(auth, email, password)
+    .then(async (userCredential) => {
       const user = userCredential.user;
 
       window.localStorage.setItem("user",user.uid);
       console.log("this is uid" + window.localStorage.getItem("user"));
-      console.log("createAcc Email, Result: success");
-      AddUser({id : user.uid, name : user.email });
 
+      await AddUser({id : user.uid, name : user.email });
+      console.log("createAcc Email, Result: success");
       window.location.href = "/"
     })
     .catch((error) => {
@@ -30,6 +30,7 @@ export async function createAccWithEmail(email, password) {
       const errorMessage = error.message;
       window.alert(errorMessage);
     });
+
 }
 
 export async function signInWithEmail(email, password) {

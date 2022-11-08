@@ -30,10 +30,10 @@ export function TestConnection(){
     });
 }
 
-export function AddUser(dict){
+export async function AddUser(dict){
     let method = "user/add/" + JSON.stringify(dict)
 
-    fetch(Url + method,{
+    await fetch(Url + method,{
         "method" : "POST",
         "referrerPolicy": "no-referrer",
         "headers" : {"Content-Type" : "application/json"},

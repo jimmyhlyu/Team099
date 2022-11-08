@@ -9,7 +9,7 @@ export async function handleSignIn() {
   await Auth.signInWithEmail(userName, userPassWord);
 }
 
-export function handleSignUp(e) {
+export async function handleSignUp(e) {
   e.preventDefault();
   const userName = document.getElementsByName("username")[0].value;
   const email = document.getElementsByName("email")[0].value;
@@ -20,12 +20,12 @@ export function handleSignUp(e) {
   }
   else{
     console.log(email);
-    Auth.createAccWithEmail(email, userPassWord);
+    await Auth.createAccWithEmail(email, userPassWord);
   }
 }
 
 
-export function handleAddFirend(e){
+export async function handleAddFirend(e){
   e.preventDefault();
   const name = document.getElementsByName("addFriendsName")[0].value;
   const status = document.getElementsByName("addFriendsStatus")[0].value;
@@ -37,7 +37,7 @@ export function handleAddFirend(e){
   const dict = {name : name, status : "LEAD",
                 gender : "MALE", date_first_met : firstMet,
                 hours_spent_together : hours,sector : 'FRIENDSHIP'};
-  AddConnection(id, dict);
+  await AddConnection(id, dict);
   window.alert("Add friend successfully");
 }
 
