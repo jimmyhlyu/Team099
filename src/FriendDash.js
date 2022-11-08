@@ -67,7 +67,7 @@ function FriendDash({ friendName, fam, int, sim, id }) {
     <>
       <div class="friend">
         <div class="infoBox">
-          <img class="profilePic" src="src/proPic2.webp" alt="" />
+          <img class="profilePic" alt="" />
           <p class="name">{friendName}</p>
           <progress class="intimacy" max="100" value="75"></progress>
         </div>
