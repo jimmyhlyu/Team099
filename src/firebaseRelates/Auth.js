@@ -23,7 +23,7 @@ export async function createAccWithEmail(email, password) {
       console.log("createAcc Email, Result: success");
       AddUser({id : user.uid, name : user.email });
 
-      window.location.href = "/login"
+      window.location.href = "/"
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -40,7 +40,7 @@ export function signInWithEmail(email, password) {
       window.sessionStorage.setItem("user",user.uid);
       window.alert("signIn email, Result: success");
 
-      window.location.href = "/";
+      window.location.href = "/dashboard";
     })
     .catch((error) => {
       const errorCode = error.code;

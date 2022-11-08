@@ -214,3 +214,5 @@ def _get_insights_timeline(user_id: str, connection_id: str) -> pd.DataFrame:
         connections['intensity'] = 0.5
 
     return connections[['history_id', 'value', 'efficiency', 'intensity']].reset_index(drop=False)
+
+

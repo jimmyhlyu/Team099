@@ -4,17 +4,17 @@ import {collection, query, where, getDocs, setDoc} from "firebase/firestore";
 import Friend from "./../Friend";
 import {forEach} from "react-bootstrap/ElementChildren";
 import {debug} from "prettier/doc";
-let Url = " http://127.0.0.1:5000/";
+const Url = new URL("https://jimmylyu.pythonanywhere.com/");
 
 
 
-
-
+console.log(Url.protocol)
 
 export function TestConnection(){
     let data = new FormData();
     fetch(Url,{
-        "method" : "Get"
+        "method" : "Get",
+        "referrerPolicy": "no-referrer"
     } ).then(
         data => {
             data.text().then(
@@ -35,6 +35,7 @@ export function AddUser(dict){
 
     fetch(Url + method,{
         "method" : "POST",
+        "referrerPolicy": "no-referrer",
         "headers" : {"Content-Type" : "application/json"},
     } ).then(
         response => {
@@ -59,6 +60,7 @@ export function UpdateUser(id,dict){
     let method = "user/update/" + id +JSON.stringify(dict)
     fetch(Url + method,{
         "method" : "PATCH",
+        "referrerPolicy": "no-referrer",
         "headers" : {"Content-Type" : "application/json"},
     } ).then(
         response => {
@@ -98,8 +100,7 @@ export function GetUser(id){
 
 export async function GetUserConnections(id) {
     let data = new FormData();
-    let method = "/connection/get/from_user/" + "IgVKqxXvJTZSa7wx0IjWKCx40uu1";
-    id = "IgVKqxXvJTZSa7wx0IjWKCx40uu1";
+    let method = "connection/get/from_user/" + "IgVKqxXvJTZSa7wx0IjWKCx40uu1";
     const ref = collection(db, 'connectionHistory');
     const q = query(ref, where("connection.user_id", "==", id));
     const querySnapshot = await getDocs(q);
@@ -129,6 +130,7 @@ export function AddConnection(id,dict){
 
     fetch(Url + method,{
         "method" : "POST",
+        "referrerPolicy": "no-referrer",
         "headers" : {"Content-Type" : "application/json"},
     } ).then(
         response => {
@@ -151,10 +153,11 @@ export function AddConnection(id,dict){
 
 export  function GetConnectionScore(id, connectionId){
     let data = new FormData();
-    let method = "/connection/insights/timeline/" + id + "/" + connectionId;
+    let method = "connection/insights/timeline/" + id + "/" + connectionId;
     let newDict = {};
     return fetch(Url + method,{
-        "method" : "Get"
+        "method" : "Get",
+        "referrerPolicy": "no-referrer",
     } ).then((data) => {
         return data.json();
 
@@ -169,7 +172,7 @@ export  function GetConnectionScore(id, connectionId){
 
 export function UpdateSurveyResult(connectionId, answer){
     answer["additional_hours"] = 0;
-    let method = "/connection/update/on_survey_submit/" + connectionId + "/" + JSON.stringify(answer);
+    let method = "connection/update/on_survey_submit/" + connectionId + "/" + JSON.stringify(answer);
     console.log(method)
     fetch(Url + method,{
         "method" : "PATCH",

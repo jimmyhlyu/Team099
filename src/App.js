@@ -29,7 +29,7 @@ function App() {
   return (
     <body>
       <div class="sideBar">
-        <Nav.Link className="home sideBarButton" href="/"></Nav.Link>
+        <Nav.Link className="home sideBarButton" href="/dashboard"></Nav.Link>
         <Nav.Link className="add sideBarButton" href="add-friend"></Nav.Link>
         <Nav.Link className="person sideBarButton" href="profile"></Nav.Link>
         {/*<Nav.Link className="light sideBarButton" href="survey"></Nav.Link>*/}
@@ -38,7 +38,8 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/add-friend" element={<AddFriend />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />

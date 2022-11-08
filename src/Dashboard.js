@@ -35,9 +35,9 @@ function Dashboard() {
           return (
             <FriendDash
               friendName={friend.friendName}
-              fam={friend.fam}
-              int={friend.int}
-              sim={friend.sim}
+              fam={friend.fam * 100}
+              int={friend.int * 100}
+              sim={friend.sim * 100}
               id={friend.id}
             />
           );
