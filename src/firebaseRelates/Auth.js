@@ -14,7 +14,7 @@ const auth = getAuth(app);
 
 export async function createAccWithEmail(email, password) {
 
-  createUserWithEmailAndPassword(auth, email, password)
+  await createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
 
@@ -32,8 +32,8 @@ export async function createAccWithEmail(email, password) {
     });
 }
 
-export function signInWithEmail(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
+export async function signInWithEmail(email, password) {
+  await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;

@@ -3,10 +3,10 @@ import {AddConnection, AddUser, GetConnectionScore, GetUserConnections} from "./
 import {getFriends} from "./firebaseRelates/Firestore";
 
 
-export function handleSignIn() {
+export async function handleSignIn() {
   const userName = document.getElementsByName("username")[0].value;
   const userPassWord = document.getElementsByName("password")[0].value;
-  Auth.signInWithEmail(userName, userPassWord);
+  await Auth.signInWithEmail(userName, userPassWord);
 }
 
 export function handleSignUp(e) {

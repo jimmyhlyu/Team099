@@ -4,10 +4,10 @@ import {collection, query, where, getDocs, setDoc} from "firebase/firestore";
 import Friend from "./../Friend";
 import {forEach} from "react-bootstrap/ElementChildren";
 import {debug} from "prettier/doc";
+
+
+
 const Url = new URL("https://jimmylyu.pythonanywhere.com/");
-
-
-
 console.log(Url.protocol)
 
 export function TestConnection(){
@@ -130,7 +130,7 @@ export function AddConnection(id,dict){
 
     fetch(Url + method,{
         "method" : "POST",
-        "referrerPolicy": "no-referrer",
+
         "headers" : {"Content-Type" : "application/json"},
     } ).then(
         response => {
